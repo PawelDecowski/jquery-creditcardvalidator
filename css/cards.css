@@ -1,0 +1,131 @@
+body {
+    color: #333;
+    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    line-height: 32px;
+}
+
+.cards {
+    overflow: hidden;
+}
+
+.cards li {
+    background-image: url(../images/card_logos.png);
+    background-position: 0 0;
+    float: left;
+    height: 32px;
+    margin-right: 8px;
+    text-indent: -9999px;
+    -moz-transition: all .2s;
+    width: 51px;
+}
+
+.cards li:last-child {
+    margin-right: 0;
+}
+
+form {
+    background-color: #f8f8f8;
+    background: -moz-linear-gradient(#fff, #f8f8f8);
+    border: 5px solid #fff;
+    margin: 62px auto;
+    padding: 12px 24px 24px;
+    width: 287px;
+    -moz-box-shadow: 0 1px 3px #ccc;
+}
+
+form li {
+    margin: 8px 0;
+}
+
+.cards .visa-electron {
+    background-position: 204px 0;
+}
+
+.cards .mastercard {
+    background-position: 153px 0;
+}
+
+.cards .maestro {
+    background-position: 102px 0;
+}
+
+.cards .discover {
+    background-position: 51px 0;
+}
+
+.cards .visa.off {
+    background-position: 0 32px;
+}
+
+.cards .visa-electron.off {
+    background-position: 204px 32px;
+}
+
+.cards .mastercard.off {
+    background-position: 153px 32px;
+}
+
+.cards .maestro.off {
+    background-position: 102px 32px;
+}
+
+.cards .discover.off {
+    background-position: 51px 32px;
+}
+
+form label {
+    color: #555;
+    display: block;
+    font-size: 14px;
+}
+
+form label small {
+    color: #aaa;
+    font-size: 11px;
+    line-height: 11px;
+    text-transform: uppercase;
+}
+
+form input {
+    border: 1px solid #aaa;
+    border-color: #aaa #ddd #ddd #aaa;
+    color: #333;
+    display: block;
+    font-size: 18px;
+    height: 30px;
+    padding: 0 5px;
+    width: 275px;
+    -moz-box-shadow: inset 0 1px 3px -1px #ccc; 
+    -moz-box-sizing: content-box;
+}
+
+.vertical {
+    overflow: hidden;
+}
+
+.vertical li {
+    float: left;
+    width: 140px;
+}
+
+.vertical li:last-child {
+    float: right;
+    text-align: right;
+}
+
+.vertical .or {
+    color: #aaa;
+    float: left;
+    font-size: 12px;
+    margin-left: -8px;
+    margin-top: 32px;
+}
+
+.vertical input {
+    width: 68px;
+}
+
+.vertical li:last-child input {
+    float: right;
+}

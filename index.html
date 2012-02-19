@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>Cards</title>
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/cards.css">
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/cards.js"></script>
+</head>
+<body>
+    <form>
+        <h2>Payment details</h2>
+
+        <ul>
+            <li>
+                <ul class="cards">
+                    <li class="visa">Visa</li>
+                    <li class="visa-electron">Visa Electron</li>
+                    <li class="mastercard">MasterCard</li>
+                    <li class="maestro">Maestro</li>
+                    <li class="discover">Discover</li>
+                </ul>
+            </li>
+
+            <li>
+                <label for="card_number">Card number</label>
+                <input type="text" name="card_number" id="card_number">
+            </li>
+
+            <li class="vertical">
+                <ul>
+                    <li>
+                        <label for="expiry_date">Expiry date <small>mm/yy</small></label>
+                        <input type="text" name="expiry_date" id="expiry_date" maxlength="5">
+                    </li>
+
+                    <li>
+                        <label for="cvv">CVV</label>
+                        <input type="text" name="cvv" id="cvv" maxlength="3">
+                    </li>
+                </ul>
+            </li>
+
+            <li class="vertical maestro">
+                <ul>
+                    <li>
+                        <label for="issue_date">Issue date <small>mm/yy</small></label>
+                        <input type="text" name="issue_date" id="issue_date" maxlength="5">
+                    </li>
+
+                    <li>
+                        <span class="or">or</span>
+                        <label for="issue_number">Issue number</label>
+                        <input type="text" name="issue_number" id="issue_number" maxlength="2">
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+                <label for="">Your name</label>
+                <input type="text" name="name" id="name">
+            </li>
+        </ul>
+    </form>
+
+    <script>
+        $(function() {
+            $('.vertical.maestro').hide().css({opacity: 0});
+            $('#card_number').cards(function(type) {
+                if (type == '') {
+                    $('.cards li').removeClass('off');
+                    $('.vertical.maestro').slideUp({duration: 200}).animate({opacity:0}, {queue: false, duration: 200});
+                    return;
+                }
+
+                $('.cards li').addClass('off');
+                $('.cards .' + type).removeClass('off');
+
+                if (type == 'maestro') {
+                    $('.vertical.maestro').slideDown({duration: 200}).animate({opacity:1}, {queue: false});
+                } else {    
+                    $('.vertical.maestro').slideUp({duration: 200}).animate({opacity:0}, {queue: false, duration: 200});
+                }
+            });
+        });
+    </script>
+</body>
+</html>
