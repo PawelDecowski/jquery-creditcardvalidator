@@ -54,22 +54,24 @@ $.fn.cards = (callback) ->
     
     validate = (number) ->
         card_type = get_card_type number
+        luhn_valid = false
+        length_valid = false
 
         if card_type?
-            luhn = is_valid_luhn number
-            length = is_valid_length number, card_type
+            luhn_valid = is_valid_luhn number
+            length_valid = is_valid_length number, card_type
 
         callback
             card_type: card_type
-            luhn: luhn
-            length: length
+            luhn_valid: luhn_valid
+            length_valid: length_valid
 
     this.bind('input', ->
-        number = $(this).val().replace /[ -]/, ''
+        number = $(this).val().replace /[ -]/g, ''
         validate number
     )
 
-    number = $(this).val().replace /[ -]/, ''
+    number = $(this).val().replace /[ -]/g, ''
     validate number
 
     this

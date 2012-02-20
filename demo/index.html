@@ -71,6 +71,7 @@
             $('#card_number').cards(function(result) {
                 if (result.card_type === null) {
                     $('.cards li').removeClass('off');
+                    $('#card_number').removeClass('valid');
                     $('.vertical.maestro').slideUp({duration: 200}).animate({opacity:0}, {queue: false, duration: 200});
                     return;
                 }
@@ -82,6 +83,12 @@
                     $('.vertical.maestro').slideDown({duration: 200}).animate({opacity:1}, {queue: false});
                 } else {    
                     $('.vertical.maestro').slideUp({duration: 200}).animate({opacity:0}, {queue: false, duration: 200});
+                }
+
+                if (result.length_valid && result.luhn_valid) {
+                    $('#card_number').addClass('valid');
+                } else {
+                    $('#card_number').removeClass('valid');
                 }
             });
         });
