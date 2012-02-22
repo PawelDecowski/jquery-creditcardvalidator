@@ -1,5 +1,5 @@
 ###
-jQuery Credit Card Validation
+jQuery Credit Card Validator
 
 Copyright 2012 Pawel Decowski
 
