@@ -16,7 +16,7 @@ Mountain View, California, 94041, USA.
 
 $ = jQuery
 
-$.fn.cards = (callback) ->
+$.fn.validateCreditCard = (callback) ->
     card_types = [
         {
             name: 'visa-electron'
