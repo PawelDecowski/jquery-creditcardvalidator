@@ -5,7 +5,7 @@
   $ = jQuery;
 
   $.fn.cards = function(callback) {
-    var card_types, get_card_type, is_valid_length, is_valid_luhn, number, validate;
+    var card_types, get_card_type, is_valid_length, is_valid_luhn, normalize, validate, validate_number;
     card_types = [
       {
         name: 'visa-electron',
@@ -61,7 +61,7 @@
       var _ref;
       return _ref = number.length, __indexOf.call(card_type.valid_length, _ref) >= 0;
     };
-    validate = function(number) {
+    validate_number = function(number) {
       var card_type, length_valid, luhn_valid;
       card_type = get_card_type(number);
       luhn_valid = false;
@@ -76,13 +76,22 @@
         length_valid: length_valid
       });
     };
-    this.bind('input', function() {
+    validate = function() {
       var number;
-      number = $(this).val().replace(/[ -]/g, '');
-      return validate(number);
+      number = normalize($(this).val());
+      return validate_number(number);
+    };
+    normalize = function(number) {
+      return number.replace(/[ -]/g, '');
+    };
+    this.bind('input', function() {
+      $(this).unbind('keyup');
+      return validate.call(this);
     });
-    number = $(this).val().replace(/[ -]/g, '');
-    validate(number);
+    this.bind('keyup', function() {
+      return validate.call(this);
+    });
+    validate.call(this);
     return this;
   };
 

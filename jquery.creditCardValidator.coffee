@@ -52,7 +52,7 @@ $.fn.cards = (callback) ->
     is_valid_length = (number, card_type) ->
         number.length in card_type.valid_length
     
-    validate = (number) ->
+    validate_number = (number) ->
         card_type = get_card_type number
         luhn_valid = false
         length_valid = false
@@ -66,12 +66,24 @@ $.fn.cards = (callback) ->
             luhn_valid: luhn_valid
             length_valid: length_valid
 
+    validate = ->
+        number = normalize $(this).val()
+        validate_number number       
+
+    normalize = (number) ->
+        number.replace /[ -]/g, ''
+
     this.bind('input', ->
-        number = $(this).val().replace /[ -]/g, ''
-        validate number
+        $(this).unbind('keyup') # if input event is fired (so is supported) then unbind keyup
+        validate.call this
     )
 
-    number = $(this).val().replace /[ -]/g, ''
-    validate number
+    # bind keyup in case input event isn't supported
+    this.bind('keyup', ->
+        validate.call this
+    )
+
+    # run validation on page load in case the card number is prefilled
+    validate.call this
 
     this
