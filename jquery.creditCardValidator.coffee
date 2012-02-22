@@ -19,6 +19,36 @@ $ = jQuery
 $.fn.validateCreditCard = (callback) ->
     card_types = [
         {
+            name: 'amex'
+            pattern: /^3[47]/
+            valid_length: [ 15 ]
+        }
+        {
+            name: 'diners_club_carte_blanche'
+            pattern: /^30[0-5]/
+            valid_length: [ 14 ]
+        }
+        {
+            name: 'diners_club_international'
+            pattern: /^36/
+            valid_length: [ 14 ]
+        }
+        {
+            name: 'diners_club_us_and_ca'
+            pattern: /^5[45]/
+            valid_length: [ 16 ]
+        }
+        {
+            name: 'jcb'
+            pattern: /^35(2[89]|[3-8][0-9])/
+            valid_length: 16
+        }
+        {
+            name: 'laser'
+            pattern: /^(6304|630[69]|6771)/
+            valid_length: [ 16..19 ]
+        }
+        {
             name: 'visa-electron'
             pattern: /^(4026|417500|4508|4844|491(3|7))/
             valid_length: [ 16 ]
@@ -99,7 +129,7 @@ $.fn.validateCreditCard = (callback) ->
         validate.call this
     )
 
-    # run validation on page load in case the card number is prefilled
+    # run validation straight away in case the card number is prefilled
     validate.call this
 
     this
