@@ -9,21 +9,57 @@ body {
 
 .cards {
     overflow: hidden;
-}
 
-.cards li {
-    background-image: url(card_logos.png);
-    background-position: 0 0;
-    float: left;
-    height: 32px;
-    margin-right: 8px;
-    text-indent: -9999px;
-    -moz-transition: all .2s;
-    width: 51px;
-}
+    li {
+        background-image: url(card_logos.png);
+        background-position: 0 0;
+        float: left;
+        height: 32px;
+        margin-right: 8px;
+        text-indent: -9999px;
+        -moz-transition: all .2s;
+        width: 51px;
+    }
 
-.cards li:last-child {
-    margin-right: 0;
+    li:last-child {
+        margin-right: 0;
+    }
+
+    .visa-electron {
+        background-position: 204px 0;
+    }
+
+    .mastercard {
+        background-position: 153px 0;
+    }
+
+    .maestro {
+        background-position: 102px 0;
+    }
+
+    .discover {
+        background-position: 51px 0;
+    }
+
+    .visa.off {
+        background-position: 0 32px;
+    }
+
+    .visa-electron.off {
+        background-position: 204px 32px;
+    }
+
+    .mastercard.off {
+        background-position: 153px 32px;
+    }
+
+    .maestro.off {
+        background-position: 102px 32px;
+    }
+
+    .discover.off {
+        background-position: 51px 32px;
+    }
 }
 
 form {
@@ -34,104 +70,68 @@ form {
     padding: 12px 24px 24px;
     width: 287px;
     -moz-box-shadow: 0 1px 3px #ccc;
-}
 
-form li {
-    margin: 8px 0;
-}
+    li {
+        margin: 8px 0;
+    }
 
-.cards .visa-electron {
-    background-position: 204px 0;
-}
+    label {
+        color: #555;
+        display: block;
+        font-size: 14px;
 
-.cards .mastercard {
-    background-position: 153px 0;
-}
+        small {
+            color: #aaa;
+            font-size: 11px;
+            line-height: 11px;
+            text-transform: uppercase;
+        }
+    }
 
-.cards .maestro {
-    background-position: 102px 0;
-}
+    input {
+        border: 1px solid #aaa;
+        border-color: #aaa #ddd #ddd #aaa;
+        color: #333;
+        display: block;
+        font-size: 18px;
+        height: 30px;
+        padding: 0 5px;
+        width: 275px;
+        -moz-box-shadow: inset 0 1px 3px -1px #ccc; 
+        -moz-box-sizing: content-box;
+    }
 
-.cards .discover {
-    background-position: 51px 0;
-}
-
-.cards .visa.off {
-    background-position: 0 32px;
-}
-
-.cards .visa-electron.off {
-    background-position: 204px 32px;
-}
-
-.cards .mastercard.off {
-    background-position: 153px 32px;
-}
-
-.cards .maestro.off {
-    background-position: 102px 32px;
-}
-
-.cards .discover.off {
-    background-position: 51px 32px;
-}
-
-form label {
-    color: #555;
-    display: block;
-    font-size: 14px;
-}
-
-form label small {
-    color: #aaa;
-    font-size: 11px;
-    line-height: 11px;
-    text-transform: uppercase;
-}
-
-form input {
-    border: 1px solid #aaa;
-    border-color: #aaa #ddd #ddd #aaa;
-    color: #333;
-    display: block;
-    font-size: 18px;
-    height: 30px;
-    padding: 0 5px;
-    width: 275px;
-    -moz-box-shadow: inset 0 1px 3px -1px #ccc; 
-    -moz-box-sizing: content-box;
-}
-
-form input.valid {
-    background: url(tick.png) 260px center no-repeat;
+    input.valid {
+        background: url(tick.png) 260px center no-repeat;
+    }
 }
 
 .vertical {
     overflow: hidden;
-}
 
-.vertical li {
-    float: left;
-    width: 140px;
-}
+    li {
+        float: left;
+        width: 140px;
 
-.vertical li:last-child {
-    float: right;
-    text-align: right;
-}
+        .or {
+            color: #aaa;
+            float: left;
+            font-size: 12px;
+            margin-left: -8px;
+            margin-top: 32px;
+        }
+    }
 
-.vertical .or {
-    color: #aaa;
-    float: left;
-    font-size: 12px;
-    margin-left: -8px;
-    margin-top: 32px;
-}
+    li:last-child {
+        float: right;
+        text-align: right;
 
-.vertical input {
-    width: 68px;
-}
+        input {
+            float: right;
+        }
+    }
 
-.vertical li:last-child input {
-    float: right;
+    input {
+        width: 68px;
+    }
 }
