@@ -1,6 +1,6 @@
 $ ->
     $('.vertical.maestro').hide().css opacity: 0 ;
-    $('#card_number').cards (result) ->
+    $('#card_number').validateCreditCard (result) ->
         if not result.card_type?
             $('.cards li').removeClass 'off';
             $('#card_number').removeClass 'valid';

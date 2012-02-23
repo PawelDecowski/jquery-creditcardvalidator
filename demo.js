@@ -4,7 +4,7 @@
     $('.vertical.maestro').hide().css({
       opacity: 0
     });
-    return $('#card_number').cards(function(result) {
+    return $('#card_number').validateCreditCard(function(result) {
       if (!(result.card_type != null)) {
         $('.cards li').removeClass('off');
         $('#card_number').removeClass('valid');
