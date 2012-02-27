@@ -141,6 +141,10 @@ body {
   margin-right: 8px;
   text-indent: -9999px;
   -moz-transition: all .2s;
+  -webkit-transition: all .2s;
+  -ms-transition: all .2s;
+  -o-transition: all .2s;
+  transition: .2s;
   width: 51px;
 }
 .cards li:last-child {
