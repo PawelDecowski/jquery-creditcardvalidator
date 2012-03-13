@@ -2,7 +2,7 @@
 <html lang="en-GB">
 <head>
     <meta charset="UTF-8">
-    <title>jQuery Credit Card Validator Demo</title>
+    <title>jQuery Credit Card Validator &mdash; Pawel Decowski</title>
 
     <link rel="stylesheet" href="demo.css">
 
@@ -15,77 +15,132 @@
         <h1>jQuery Credit Card Validator</h1>
         <h2>by <a href="http://twitter.com/PawelDecowski">@PawelDecowski</a></h2>
 
-        <article>
-            <h3>Errr, what?</h3>
-            <p>Why should I tell you, if I can show you?</p>
-        </article>
+        <p>jQuery Credit Card Validator <em>detects and validates</em> credit card numbers. It&rsquo;ll
+           tell you the detected <a href="#supported_card_types">credit card type</a> and whether the number
+           length and <a href="http://en.wikipedia.org/wiki/Luhn_algorithm">Luhn checksum</a> are valid for the type of card.</p>
 
-        <form>
-            <h2>Payment details</h2>
+        <div class="demo">
+            <h3>Demo</h3>
 
-            <ul>
-                <li>
-                    <ul class="cards">
-                        <li class="visa">Visa</li>
-                        <li class="visa-electron">Visa Electron</li>
-                        <li class="mastercard">MasterCard</li>
-                        <li class="maestro">Maestro</li>
-                        <li class="discover">Discover</li>
-                    </ul>
-                </li>
+            <div class="numbers">
+                <p>Try some of these numbers:</p>
 
-                <li>
-                    <label for="card_number">Card number</label>
-                    <input type="text" name="card_number" id="card_number">
-                </li>
+                <ul class="list">
+                    <li>4000000000000002</li>
+                    <li>4026000000000002</li>
+                    <li>501800000009</li>
+                    <li>5100000000000008</li>
+                    <li>6011000000000004</li>
+                </ul>
+            </div>
 
-                <li class="vertical">
-                    <ul>
-                        <li>
-                            <label for="expiry_date">Expiry date <small>mm/yy</small></label>
-                            <input type="text" name="expiry_date" id="expiry_date" maxlength="5">
-                        </li>
+            <form>
+                <h2>Payment details</h2>
 
-                        <li>
-                            <label for="cvv">CVV</label>
-                            <input type="text" name="cvv" id="cvv" maxlength="3">
-                        </li>
-                    </ul>
-                </li>
+                <ul>
+                    <li>
+                        <ul class="cards">
+                            <li class="visa">Visa</li>
+                            <li class="visa_electron">Visa Electron</li>
+                            <li class="mastercard">MasterCard</li>
+                            <li class="maestro">Maestro</li>
+                            <li class="discover">Discover</li>
+                        </ul>
+                    </li>
 
-                <li class="vertical maestro">
-                    <ul>
-                        <li>
-                            <label for="issue_date">Issue date <small>mm/yy</small></label>
-                            <input type="text" name="issue_date" id="issue_date" maxlength="5">
-                        </li>
+                    <li>
+                        <label for="card_number">Card number</label>
+                        <input type="text" name="card_number" id="card_number">
+                    </li>
 
-                        <li>
-                            <span class="or">or</span>
-                            <label for="issue_number">Issue number</label>
-                            <input type="text" name="issue_number" id="issue_number" maxlength="2">
-                        </li>
-                    </ul>
-                </li>
+                    <li class="vertical">
+                        <ul>
+                            <li>
+                                <label for="expiry_date">Expiry date <small>mm/yy</small></label>
+                                <input type="text" name="expiry_date" id="expiry_date" maxlength="5">
+                            </li>
 
-                <li>
-                    <label for="name_on_card">Name on card</label>
-                    <input type="text" name="name_on_card" id="name_on_card">
-                </li>
-            </ul>
-        </form>
+                            <li>
+                                <label for="cvv">CVV</label>
+                                <input type="text" name="cvv" id="cvv" maxlength="3">
+                            </li>
+                        </ul>
+                    </li>
 
-        <section class="download">
+                    <li class="vertical maestro">
+                        <ul>
+                            <li>
+                                <label for="issue_date">Issue date <small>mm/yy</small></label>
+                                <input type="text" name="issue_date" id="issue_date" maxlength="5">
+                            </li>
+
+                            <li>
+                                <span class="or">or</span>
+                                <label for="issue_number">Issue number</label>
+                                <input type="text" name="issue_number" id="issue_number" maxlength="2">
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <label for="name_on_card">Name on card</label>
+                        <input type="text" name="name_on_card" id="name_on_card">
+                    </li>
+                </ul>
+            </form>
+        </div>
+
+        <div class="example">
+            <h3>How to use it</h3>
+
+            <pre><code>$('#cc_number').validateCreditCard(function(result)
+{
+    alert('CC type: ' + result.card_type
+      + '\nLength validation: ' + result.length_valid
+      + '\nLuhn validation: + result.luhn_valid');
+});</code></pre>
+        </div>
+
+        <h3>How it works</h3>
+
+        <p>jQuery Credit Card Validator is written in <a href="http://www.coffeescript.org/">CoffeeScript</a>
+            and (surprise, surprise!) is a <a href="http://jquery.com/">jQuery</a> plugin. It attaches to the
+            <a href="https://developer.mozilla.org/en/DOM/DOM_event_reference/input">input event</a> (with a fallback
+            to the <a href="https://developer.mozilla.org/en/DOM/DOM_event_reference">keyup event</a>) and, every time
+            the number in the <code>input</code> field changes, it calls a function defined by you. It passes a single
+            parameter to the function &mdash; an object with 3 properties:</p>
+
+        <ul class="list">
+            <li><code>card_type</code> &mdash; one of the <a href="#supported_card_types">strings describing the card type</a>, or <code>null</code> if card type unknown</li>
+            <li><code>length_valid</code> &mdash; <code>true</code> if the number length is valid, <code>false</code> otherwise</li>
+            <li><code>luhn_valid</code> &mdash; <code>true</code> if the Luhn checksum is correct, <code>false</code> otherwise</li>
+        </ul>
+
+        <h3 id="supported_card_types">Supported card types and corresponding string descriptors</h3>
+
+        <ul class="list">
+            <li>American Express &mdash; <code>amex</code></li>
+            <li>Diners Club Carte Blanche &mdash; <code>diners_club_carte_blanche</code></li>
+            <li>Diners Club International &mdash; <code>diners_club_international</code></li>
+            <li>Diners Club United States &amp; Canada &mdash; <code>diners_club_us_and_ca</code></li>
+            <li>Discover Card &mdash; <code>discover</code></li>
+            <li>JCB &mdash; <code>jcb</code></li>
+            <li>Laser &mdash; <code>laser</code></li>
+            <li>Maestro &mdash; <code>maestro</code></li>
+            <li>MasterCard &mdash; <code>mastercard</code></li>
+            <li>Visa &mdash; <code>visa</code></li>
+            <li>Visa Electron &mdash; <code>visa_electron</code></li>
+        </ul>
+
+        <div class="download">
             <h3>Like what you see?</h3>
 
             <p><a class="button" href="https://github.com/PawelDecowski/jQuery-CreditCardValidator/zipball/master">Download now</a></p>
-        </section>
+        </div>
 
-        <article>
-            <p>Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis.</p>
-
-            <p>Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu. Cras consequat.</p>
-        </article>
+        <div class="footer">
+            <p>&copy;2012 <a href="http://twitter.com/PawelDecowski">Pawel Decowski</a></p> 
+        </p>
     </div>
 </body>
 </html>

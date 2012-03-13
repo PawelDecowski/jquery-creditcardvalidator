@@ -1,6 +1,10 @@
 (function() {
 
   $(function() {
+    $('.demo .numbers li').wrapInner('<a href="#"></a>').click(function(e) {
+      e.preventDefault();
+      return $('#card_number').val($(this).text()).trigger('input');
+    });
     $('.vertical.maestro').hide().css({
       opacity: 0
     });

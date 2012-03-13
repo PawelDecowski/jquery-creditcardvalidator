@@ -1,4 +1,10 @@
 $ ->
+    $('.demo .numbers li').wrapInner('<a href="#"></a>').click( (e) ->
+        e.preventDefault()
+        $('#card_number').val($(@).text()).trigger('input')
+
+    )
+
     $('.vertical.maestro').hide().css opacity: 0 ;
     $('#card_number').validateCreditCard (result) ->
         if not result.card_type?

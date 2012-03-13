@@ -50,18 +50,37 @@ a {
     text-decoration: none;
 }
 
-.button {
-    .gradient(@button-color, darken(@button-color, 10%));
-    .border-radius(2px);
+a:hover {
+    border-bottom: 1px solid @link-color;
+}
+
+a.button {
+    .gradient(lighten(@button-color, 10%), @button-color);
+    .border-radius(5px);
 
     background-color: darken(@button-color, 5%);
-    color: lighten(@button-color, 50%);
+    color: lighten(@button-color, 55%);
     display: block;
-    border-bottom: 1px solid darken(@button-color, 20%);
+    border-bottom: 2px solid darken(@button-color, 10%);
     font-size: 24px;
-    line-height: @line-height * 2 - 1px;
+    line-height: @line-height * 2 - 2px;
+    padding: 0 30px;
     text-align: center;
-    text-shadow: 0 1px darken(@button-color, 20%);
+    text-shadow: 0 1px rgba(0,0,0,0.4);
+
+    &:hover {
+        .gradient(lighten(@button-color, 15%), lighten(@button-color, 5%));
+
+        border-bottom-color: darken(@button-color, 5%);
+        color: lighten(@button-color, 60%);
+    }
+
+    &:active {
+        .box-shadow(inset 0 1px 5px rgba(0,0,0,.4));
+
+        border-bottom: none;
+        margin-top: 2px;
+    }
 }
 
 h1 {
@@ -83,8 +102,53 @@ h3 {
     text-transform: uppercase;
 }
 
-article p {
+p {
     color: #707070;
+    margin-bottom: @line-height;
+}
+
+.list {
+    color: #707070;
+    font-size: 14px;
+    list-style: disc;
+    margin-bottom: @line-height;
+    margin-left: 25px;
+}
+
+code {
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    color: #555;
+    font-family: monospace;
+    font-size: 14px;
+}
+
+pre {
+    code {
+        display: block;
+        line-height: 20px;
+        overflow: scroll;
+        padding: @line-height / 2 - 2px 20px;
+    }
+}
+
+.demo .numbers {
+    background-color: #ffd;
+    border: 1px solid #eec;
+    margin-bottom: @line-height;
+    padding: @line-height / 2 20px;
+}
+
+.demo .numbers p {
+    margin-bottom: 0;
+}
+
+.demo .numbers .list {
+    margin-bottom: 0;
+}
+
+.example {
+    clear: both;
     margin-bottom: @line-height;
 }
 
@@ -108,7 +172,7 @@ article p {
         margin-right: 0;
     }
 
-    .visa-electron {
+    .visa_electron {
         background-position: 204px 0;
     }
 
@@ -128,7 +192,7 @@ article p {
         background-position: 0 32px;
     }
 
-    .visa-electron.off {
+    .visa_electron.off {
         background-position: 204px 32px;
     }
 
@@ -151,7 +215,7 @@ form {
 
     background-color: #f8f8f8;
     border: 5px solid #fff;
-    margin: @line-height auto;
+    margin: 0 auto @line-height;
     padding: 12px 24px 24px;
     width: 287px;
 
@@ -229,6 +293,23 @@ form {
     }
 }
 
+.footer {
+    font-size: 12px;
+    text-align: center;
+}
+
+@media screen and (max-width: 767px) {
+    .demo .numbers ul {
+        margin-left: 0;
+        overflow: hidden;
+
+        li {
+            float: left;
+            margin-left: 24px;
+        }
+    }
+}
+
 @media screen and (min-width: 768px) {
     body {
         margin: 0;
@@ -241,14 +322,14 @@ form {
 
     form {
         float: left;
-        margin: @line-height 0;
+        margin: 0 0 @line-height;
     }
 
-    article {
-        clear: both;
+    .demo .numbers {
+        float: right;
     }
 
     .download {
-        float: right;
+        clear: both;
     }
 }
