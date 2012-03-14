@@ -125,7 +125,14 @@
             parameter to the function &mdash; an object with 3 properties:</p>
 
         <ul class="list">
-            <li><code>card_type</code> &mdash; one of the <a href="#supported_card_types">strings describing the card type</a>, or <code>null</code> if card type unknown</li>
+            <li>
+                <code>card_type</code> &mdash; an object with the below properties, or <code>null</code> if card type unknown
+                <ul class="list">
+                    <li><code>name</code> &mdash; one of the <a href="#supported_card_types">strings describing the card type</a>, eg <code>visa</code></li>
+                    <li><code>pattern</code> &mdash; regular expression used to match the card type, eg <code>/^4/</code></li>
+                    <li><code>length</code> &mdash; an array of valid lengths for the card type, eg <code>[13, 16]</code>
+                </ul>
+            </li>
             <li><code>length_valid</code> &mdash; <code>true</code> if the number length is valid, <code>false</code> otherwise</li>
             <li><code>luhn_valid</code> &mdash; <code>true</code> if the Luhn checksum is correct, <code>false</code> otherwise</li>
         </ul>
