@@ -1,4 +1,3 @@
-
 /*
 jQuery Credit Card Validator
 
@@ -55,7 +54,7 @@ Mountain View, California, 94041, USA.
       }, {
         name: 'visa',
         pattern: /^4/,
-        valid_length: [13, 16]
+        valid_length: [16]
       }, {
         name: 'mastercard',
         pattern: /^5[1-5]/,
