@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>jQuery Credit Card Validator Unit Tests</title>
+        <link rel="stylesheet" href="lib/qunit.css">
+        <script src="lib/jquery-1.7.1.min.js"></script>
+        <script src="lib/qunit.js"></script>
+        <script src="../jquery.creditCardValidator.js"></script>
+        <script>
+            var cards = [
+                    {
+                        type: "amex",
+                        number: "378282246310005",
+                        luhn: true
+                    },
+                    {
+                        type: "visa",
+                        number: "4111111111111111",
+                        luhn: true
+                    },
+                    {
+                        type: "visa",
+                        number: "4111111111111112",
+                        luhn: false
+                    },
+                    {
+                        type: "visa",
+                        number: "4012888888881881",
+                        luhn: true
+                    }
+                ],
+                interval = setInterval(function() {
+                    var input = $("#cardNumber"),
+                        card = cards.shift();
+                    input.validateCreditCard(function(result) {
+                        if(result.card_type) {
+                            test((card.luhn ? "Valid" : "Invalid") + " card number (" + card.number + ")", function() {
+                                equal(card.type, result.card_type.name, "Card type (" + card.type + ") recognised correctly.");
+                                equal(card.luhn, result.luhn_valid, (card.luhn ? "Valid" : "Invalid") + " luhn checksum recognised correctly.");
+                            });
+                        }
+                    });
+                    input.val(card.number).trigger("input");
+                    if(!cards.length) {
+                        clearInterval(interval);
+                    }
+                }, 20);
+        </script>
+    </head>
+    <body>
+        <h1 id="qunit-header">jQuery Credit Card Validator Unit Tests</h1>
+        <h2 id="qunit-banner"></h2>
+        <div id="qunit-testrunner-toolbar"></div>
+        <h2 id="qunit-userAgent"></h2>
+        <ol id="qunit-tests"></ol>
+        <div id="qunit-fixture">
+            <input id="cardNumber">
+        </div>
+    </body>
+</html>
