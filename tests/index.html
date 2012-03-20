@@ -25,6 +25,12 @@
                         luhn: false
                     },
                     {
+                        type: "amex",
+                        number: "3700000",
+                        luhn: false,
+                        invalidLength: true
+                    },
+                    {
                         type: "discover",
                         number: "6011111111111117",
                         luhn: true
@@ -38,6 +44,12 @@
                         type: "discover",
                         number: "6011000990139429",
                         luhn: false
+                    },
+                    {
+                        type: "discover",
+                        number: "6011000",
+                        luhn: false,
+                        invalidLength: true
                     },
                     {
                         type: "jcb",
@@ -55,6 +67,12 @@
                         luhn: false
                     },
                     {
+                        type: "jcb",
+                        number: "356000",
+                        luhn: false,
+                        invalidLength: true
+                    },
+                    {
                         type: "mastercard",
                         number: "5555555555554444",
                         luhn: true
@@ -70,6 +88,12 @@
                         luhn: false
                     },
                     {
+                        type: "mastercard",
+                        number: "510500",
+                        luhn: false,
+                        invalidLength: true
+                    },
+                    {
                         type: "visa",
                         number: "4111111111111111",
                         luhn: true
@@ -83,6 +107,12 @@
                         type: "visa",
                         number: "4012888888881881",
                         luhn: true
+                    },
+                    {
+                        type: "visa",
+                        number: "411111",
+                        luhn: false,
+                        invalidLength: true
                     }
                 ],
                 interval = setInterval(function() {
@@ -93,6 +123,7 @@
                             test((card.luhn ? "Valid" : "Invalid") + " card number (" + card.number + ")", function() {
                                 equal(card.type, result.card_type.name, "Card type (" + card.type + ") recognised correctly.");
                                 equal(card.luhn, result.luhn_valid, (card.luhn ? "Valid" : "Invalid") + " luhn checksum recognised correctly.");
+                                equal(!card.invalidLength, result.length_valid, (!card.invalidLength ? "Valid" : "Invalid") + " length recognised correctly.");
                             });
                         }
                     });
