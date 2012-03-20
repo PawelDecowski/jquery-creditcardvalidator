@@ -11,107 +11,97 @@
             var cards = [
                     {
                         type: "amex",
-                        number: "378282246310005",
-                        luhn: true
+                        number: "378282246310005"
                     },
                     {
                         type: "amex",
-                        number: "378734493671000",
-                        luhn: true
+                        number: "378734493671000"
                     },
                     {
                         type: "amex",
                         number: "370000000000000",
-                        luhn: false
+                        invalidLuhn: true
                     },
                     {
                         type: "amex",
                         number: "3700000",
-                        luhn: false,
+                        invalidLuhn: true,
                         invalidLength: true
                     },
                     {
                         type: "discover",
-                        number: "6011111111111117",
-                        luhn: true
+                        number: "6011111111111117"
                     },
                     {
                         type: "discover",
-                        number: "6011000990139424",
-                        luhn: true
+                        number: "6011000990139424"
                     },
                     {
                         type: "discover",
                         number: "6011000990139429",
-                        luhn: false
+                        invalidLuhn: true
                     },
                     {
                         type: "discover",
                         number: "6011000",
-                        luhn: false,
+                        invalidLuhn: true,
                         invalidLength: true
                     },
                     {
                         type: "jcb",
-                        number: "3530111333300000",
-                        luhn: true
+                        number: "3530111333300000"
                     },
                     {
                         type: "jcb",
-                        number: "3566002020360505",
-                        luhn: true
+                        number: "3566002020360505"
                     },
                     {
                         type: "jcb",
                         number: "3560000000000000",
-                        luhn: false
+                        invalidLuhn: true
                     },
                     {
                         type: "jcb",
                         number: "356000",
-                        luhn: false,
+                        invalidLuhn: true,
                         invalidLength: true
                     },
                     {
                         type: "mastercard",
-                        number: "5555555555554444",
-                        luhn: true
+                        number: "5555555555554444"
                     },
                     {
                         type: "mastercard",
-                        number: "5105105105105100",
-                        luhn: true
+                        number: "5105105105105100"
                     },
                     {
                         type: "mastercard",
                         number: "5105105105105109",
-                        luhn: false
+                        invalidLuhn: true
                     },
                     {
                         type: "mastercard",
                         number: "510500",
-                        luhn: false,
+                        invalidLuhn: true,
                         invalidLength: true
                     },
                     {
                         type: "visa",
-                        number: "4111111111111111",
-                        luhn: true
+                        number: "4111111111111111"
                     },
                     {
                         type: "visa",
                         number: "4111111111111112",
-                        luhn: false
+                        invalidLuhn: true
                     },
                     {
                         type: "visa",
-                        number: "4012888888881881",
-                        luhn: true
+                        number: "4012888888881881"
                     },
                     {
                         type: "visa",
                         number: "411111",
-                        luhn: false,
+                        invalidLuhn: true,
                         invalidLength: true
                     }
                 ],
@@ -120,9 +110,9 @@
                         card = cards.shift();
                     input.validateCreditCard(function(result) {
                         if(result.card_type) {
-                            test((card.luhn ? "Valid" : "Invalid") + " card number (" + card.number + ")", function() {
+                            test((!card.invalidLuhn ? "Valid" : "Invalid") + " card number (" + card.number + ")", function() {
                                 equal(card.type, result.card_type.name, "Card type (" + card.type + ") recognised correctly.");
-                                equal(card.luhn, result.luhn_valid, (card.luhn ? "Valid" : "Invalid") + " luhn checksum recognised correctly.");
+                                equal(!card.invalidLuhn, result.luhn_valid, (!card.invalidLuhn ? "Valid" : "Invalid") + " luhn checksum recognised correctly.");
                                 equal(!card.invalidLength, result.length_valid, (!card.invalidLength ? "Valid" : "Invalid") + " length recognised correctly.");
                             });
                         }
