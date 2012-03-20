@@ -8,6 +8,21 @@
         <script src="lib/qunit.js"></script>
         <script src="../jquery.creditCardValidator.js"></script>
         <script>
+            /* 
+            * QUnit unit test suite for the jQuery Credit Card Validator plugin.
+            * 
+            * To add a new test card, simply add another object literal to the following `cards` array. The format of the object is as follows:
+            *
+            * {
+            *   type: card_type                 //String, required
+            *   number: card_number             //String, required
+            *   invalidLuhn: invalid_luhn       //Boolean, optional
+            *   invalidLength: invalid_length   //Boolean, optional
+            * }
+            *
+            * `invalidLuhn` should be present and set to `true` if the number is not expected to pass Luhn validation.
+            * `invalidLength` should be present and set to `true` if the number is not expected to pass length validation.
+            */
             var cards = [
                     {
                         type: "amex",
