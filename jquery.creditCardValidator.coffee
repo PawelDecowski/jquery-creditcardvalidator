@@ -110,6 +110,8 @@ $.fn.validateCreditCard = (callback) ->
         $(this).trigger 'creditcard.validation',validationResult
         if card_type and luhn_valid and length_valid
             $(this).trigger 'valid.creditcard.validation',validationResult
+        else
+            $(this).trigger 'invalid.creditcard.validation',validationResult
         callback validationResult
 
     validate = ->

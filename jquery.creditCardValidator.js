@@ -115,6 +115,8 @@ Mountain View, California, 94041, USA.
       $(this).trigger('creditcard.validation', validationResult);
       if (card_type && luhn_valid && length_valid) {
         $(this).trigger('valid.creditcard.validation', validationResult);
+      } else {
+        $(this).trigger('invalid.creditcard.validation', validationResult);
       }
       return callback(validationResult);
     };
