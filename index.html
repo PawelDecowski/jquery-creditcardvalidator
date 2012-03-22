@@ -137,6 +137,24 @@
             <li><code>luhn_valid</code> &mdash; <code>true</code> if the Luhn checksum is correct, <code>false</code> otherwise</li>
         </ul>
 
+        <h3 id="events">Events</h3>
+        <p>
+          Events emitted by the <code>input</code> element:
+        </p>
+        <ul class="list">
+          <li>
+            <code>creditcard.validation</code> &mdash; emitted on every validation attempt. The <code>validationObject</code> (described above) is passed as a parameter to the event.
+          </li>
+          <li>
+            <code>valid.creditcard.validation</code> &mdash; emitted on only valid attempts. The <code>validationObject</code> (described above) is passed as a parameter to the event.
+          </li>
+        </ul>
+        
+        For example:
+          <pre><code>$('#cardinput').on('valid.creditcard.validation',function(e,validationObject) {
+  console.log(validationObject.card_type); //only logged when valid
+});
+</code></pre>
         <h3 id="supported_card_types">Supported card types and corresponding string descriptors</h3>
 
         <ul class="list">
