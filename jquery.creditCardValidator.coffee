@@ -125,7 +125,6 @@ $.fn.validateCreditCard = (callback) ->
     )
 
     # run validation straight away in case the card number is prefilled
-    if this.length > 0
-        validate.call this
+    validate.call this unless this.length is 0
 
     this

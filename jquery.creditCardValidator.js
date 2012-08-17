@@ -127,7 +127,7 @@ Mountain View, California, 94041, USA.
     this.bind('keyup', function() {
       return validate.call(this);
     });
-    if (this.length > 0) {
+    if (this.length !== 0) {
       validate.call(this);
     }
     return this;
