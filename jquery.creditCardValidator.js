@@ -1,3 +1,4 @@
+
 /*
 jQuery Credit Card Validator
 
@@ -98,7 +99,7 @@ Mountain View, California, 94041, USA.
       return _ref = number.length, __indexOf.call(card_type.valid_length, _ref) >= 0;
     };
     validate_number = function(number) {
-      var card_type, length_valid, luhn_valid;
+      var card_type, length_valid, luhn_valid, validationResult;
       card_type = get_card_type(number);
       luhn_valid = false;
       length_valid = false;
@@ -106,16 +107,23 @@ Mountain View, California, 94041, USA.
         luhn_valid = is_valid_luhn(number);
         length_valid = is_valid_length(number, card_type);
       }
-      return callback({
+      validationResult = {
         card_type: card_type,
         luhn_valid: luhn_valid,
         length_valid: length_valid
-      });
+      };
+      $(this).trigger('creditcard.validation', validationResult);
+      if (card_type && luhn_valid && length_valid) {
+        $(this).trigger('valid.creditcard.validation', validationResult);
+      } else {
+        $(this).trigger('invalid.creditcard.validation', validationResult);
+      }
+      return callback(validationResult);
     };
     validate = function() {
       var number;
       number = normalize($(this).val());
-      return validate_number(number);
+      return validate_number.call(this, number);
     };
     normalize = function(number) {
       return number.replace(/[ -]/g, '');

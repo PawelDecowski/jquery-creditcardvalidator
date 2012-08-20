@@ -101,15 +101,22 @@ $.fn.validateCreditCard = (callback) ->
         if card_type?
             luhn_valid = is_valid_luhn number
             length_valid = is_valid_length number, card_type
-
-        callback
+        
+        validationResult =
             card_type: card_type
             luhn_valid: luhn_valid
             length_valid: length_valid
+        
+        $(this).trigger 'creditcard.validation',validationResult
+        if card_type and luhn_valid and length_valid
+            $(this).trigger 'valid.creditcard.validation',validationResult
+        else
+            $(this).trigger 'invalid.creditcard.validation',validationResult
+        callback validationResult
 
     validate = ->
         number = normalize $(this).val()
-        validate_number number       
+        validate_number.call this,number
 
     normalize = (number) ->
         number.replace /[ -]/g, ''
