@@ -40,7 +40,7 @@ $.fn.validateCreditCard = (callback) ->
         }
         {
             name: 'laser'
-            pattern: /^(6304|630[69]|6771)/
+            pattern: /^(6304|630[69]|6771|670[69])/
             valid_length: [ 16..19 ]
         }
         {
