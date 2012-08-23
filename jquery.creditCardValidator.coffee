@@ -80,19 +80,19 @@ $.fn.validateCreditCard = (callback) ->
     is_valid_luhn = (number) ->
         sum = 0
 
-        for digit, n in number.split('').reverse().join('')
-            digit = +digit # the + casts the string to int 
+        for digit, n in number.split('').reverse()
+            digit = +digit # the + casts the string to int
             if n % 2
                 digit *= 2
                 if digit < 10 then sum += digit else sum += digit - 9
             else
                 sum += digit
-        
+
         sum % 10 == 0
 
     is_valid_length = (number, card_type) ->
         number.length in card_type.valid_length
-    
+
     validate_number = (number) ->
         card_type = get_card_type number
         luhn_valid = false
@@ -109,7 +109,7 @@ $.fn.validateCreditCard = (callback) ->
 
     validate = ->
         number = normalize $(this).val()
-        validate_number number       
+        validate_number number
 
     normalize = (number) ->
         number.replace /[ -]/g, ''
