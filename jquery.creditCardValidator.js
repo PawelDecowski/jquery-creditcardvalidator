@@ -44,7 +44,7 @@ Mountain View, California, 94041, USA.
         valid_length: [16]
       }, {
         name: 'laser',
-        pattern: /^(6304|630[69]|6771)/,
+        pattern: /^(6304|670[69]|6771)/,
         valid_length: [16, 17, 18, 19]
       }, {
         name: 'visa_electron',
