@@ -30,7 +30,7 @@ $.fn.validateCreditCard = (callback) ->
         }
         {
             name: 'diners_club_international'
-            pattern: /^36/
+            pattern: /^3[68]/
             valid_length: [ 14 ]
         }
         {

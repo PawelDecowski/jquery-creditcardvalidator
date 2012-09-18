@@ -36,7 +36,7 @@ Mountain View, California, 94041, USA.
         valid_length: [14]
       }, {
         name: 'diners_club_international',
-        pattern: /^36/,
+        pattern: /^3[68]/,
         valid_length: [14]
       }, {
         name: 'jcb',
