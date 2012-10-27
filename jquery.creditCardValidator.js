@@ -5,6 +5,8 @@ jQuery Credit Card Validator
 
 Copyright 2012 Pawel Decowski
 
+Version 1.0.0
+
 This work is licensed under the Creative Commons Attribution-ShareAlike 3.0
 Unported License. To view a copy of this license, visit:
 
