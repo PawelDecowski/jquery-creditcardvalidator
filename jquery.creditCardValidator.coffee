@@ -3,6 +3,8 @@ jQuery Credit Card Validator
 
 Copyright 2012 Pawel Decowski
 
+Version 1.0.1
+
 This work is licensed under the Creative Commons Attribution-ShareAlike 3.0
 Unported License. To view a copy of this license, visit:
 
@@ -17,6 +19,9 @@ Mountain View, California, 94041, USA.
 $ = jQuery
 
 $.fn.validateCreditCard = (callback) ->
+
+    bind_validator = if arguments[1] then arguments[1] else true
+
     card_types = [
         {
             name: 'amex'
@@ -113,16 +118,16 @@ $.fn.validateCreditCard = (callback) ->
 
     normalize = (number) ->
         number.replace /[ -]/g, ''
+    if bind_validator
+        this.bind('input', ->
+            $(this).unbind('keyup') # if input event is fired (so is supported) then unbind keyup
+            validate.call this
+        )
 
-    this.bind('input', ->
-        $(this).unbind('keyup') # if input event is fired (so is supported) then unbind keyup
-        validate.call this
-    )
-
-    # bind keyup in case input event isn't supported
-    this.bind('keyup', ->
-        validate.call this
-    )
+        # bind keyup in case input event isn't supported
+        this.bind('keyup', ->
+            validate.call this
+        )
 
     # run validation straight away in case the card number is prefilled
     validate.call this unless this.length is 0
