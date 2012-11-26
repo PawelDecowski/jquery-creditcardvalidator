@@ -83,7 +83,7 @@ Mountain View, California, 94041, USA.
       sum = 0;
       _ref = number.split('').reverse();
       for (n = _i = 0, _len = _ref.length; _i < _len; n = ++_i) {
-        digit = _ref[n];
+        digit = _ref.charAt(n);
         digit = +digit;
         if (n % 2) {
           digit *= 2;
