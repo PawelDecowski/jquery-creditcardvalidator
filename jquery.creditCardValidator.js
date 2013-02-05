@@ -23,8 +23,11 @@ Mountain View, California, 94041, USA.
 
   $ = jQuery;
 
-  $.fn.validateCreditCard = function(callback) {
-    var card_types, get_card_type, is_valid_length, is_valid_luhn, normalize, validate, validate_number;
+  $.fn.validateCreditCard = function(callback, accepted_card_types) {
+    var card_types, get_card_type, is_valid_length, is_valid_luhn, normalize, validate, validate_number, is_accepted_card_type;
+    if (typeof accepted_card_types === 'undefined' || accepted_card_types === null)
+      accepted_card_types = 'all';
+    
     card_types = [
       {
         name: 'amex',
@@ -72,11 +75,21 @@ Mountain View, California, 94041, USA.
       var card_type, _i, _len;
       for (_i = 0, _len = card_types.length; _i < _len; _i++) {
         card_type = card_types[_i];
-        if (number.match(card_type.pattern)) {
+        if ((accepted_card_types == 'all' || is_accepted_card_type(card_type)) && number.match(card_type.pattern)) {
           return card_type;
         }
       }
       return null;
+    };
+    is_accepted_card_type = function(card_type) {
+      var _i, _len;
+      for (_i = 0, _len = accepted_card_types.length; _i < _len; _i++) {
+        if (card_type == accepted_card_types[_i])
+        {
+          return true;
+        }
+      }
+      return false;
     };
     is_valid_luhn = function(number) {
       var digit, n, sum, _i, _len, _ref;
