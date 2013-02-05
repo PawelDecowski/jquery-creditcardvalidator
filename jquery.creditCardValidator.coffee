@@ -16,7 +16,9 @@ Mountain View, California, 94041, USA.
 
 $ = jQuery
 
-$.fn.validateCreditCard = (callback) ->
+$.fn.validateCreditCard = (callback, accepted_card_types) ->
+    if (!accepted_card_types?)
+        accepted_card_types = 'all'
     card_types = [
         {
             name: 'amex'
@@ -72,11 +74,16 @@ $.fn.validateCreditCard = (callback) ->
 
     get_card_type = (number) ->
         for card_type in card_types
-            if number.match card_type.pattern
+            if (accepted_card_types == 'all' || is_accepted_card_type(card_type)) && number.match card_type.pattern
                 return card_type
 
         null
-
+    is_accepted_card_type = (card_type) =>
+        for accepted_card_type in accepted_card_type
+            if (card_type == accepted_card_type)
+                return true
+        
+        return false
     is_valid_luhn = (number) ->
         sum = 0
 
