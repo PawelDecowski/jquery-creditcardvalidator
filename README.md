@@ -53,11 +53,9 @@ There are no development releases. All features, bugs and chores are developed i
 
 ### 1.0
 
-* Full test coverage.
+* Unit tests — thanks to [James Allardice](https://github.com/jamesallardice)
 
-  (I wish!)
-
-* Binding is now optional:
+* Binding is now optional — thanks to [Tanner M Young](https://github.com/tmyoung)
 
   ```
   .validateCreditCard( [options] )
@@ -65,7 +63,7 @@ There are no development releases. All features, bugs and chores are developed i
 
   Called on an input field validates the number and *returns* a `result` object.
 
-* Ability to pass an array of accepted credit cards:
+* Ability to pass an array of accepted credit cards — thanks to [gabrieljoelc](https://github.com/gabrieljoelc)
 
   ```
   $('#cc_number').validateCreditCard({ accept: ['visa', 'mastercard'] })
