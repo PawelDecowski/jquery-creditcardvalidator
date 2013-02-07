@@ -16,7 +16,7 @@ Mountain View, California, 94041, USA.
 
 $ = jQuery
 
-$.fn.validateCreditCard = (callback) ->
+$.fn.validateCreditCard = (callback, options) ->
     card_types = [
         {
             name: 'amex'
@@ -69,14 +69,22 @@ $.fn.validateCreditCard = (callback) ->
             valid_length: [ 16 ]
         }
     ]
-
+    options.accept ?= (card.name for card in card_types)
+    
+    for card_type in options.accept
+        if card_type not in (card.name for card in card_types)
+            throw "Credit card type '#{ card_type }' is not supported"
+            
     get_card_type = (number) ->
         for card_type in card_types
-            if number.match card_type.pattern
+            if (is_accepted_card_type card_type && number.match card_type.pattern
                 return card_type
 
         null
-
+    is_accepted_card_type = (card_type) ->
+        card_type.name in (card_type.name for card_type in card_types)
+        
+        return false
     is_valid_luhn = (number) ->
         sum = 0
 
