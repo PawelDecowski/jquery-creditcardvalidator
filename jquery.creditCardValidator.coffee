@@ -70,6 +70,8 @@ $.fn.validateCreditCard = (callback, options) ->
         }
     ]
 
+    options ?= {}
+
     options.accept ?= (card.name for card in card_types)
 
     for card_type in options.accept
