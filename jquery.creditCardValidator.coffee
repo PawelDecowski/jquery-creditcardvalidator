@@ -69,22 +69,20 @@ $.fn.validateCreditCard = (callback, options) ->
             valid_length: [ 16 ]
         }
     ]
+
     options.accept ?= (card.name for card in card_types)
-    
+
     for card_type in options.accept
         if card_type not in (card.name for card in card_types)
             throw "Credit card type '#{ card_type }' is not supported"
-            
+
     get_card_type = (number) ->
-        for card_type in card_types
-            if (is_accepted_card_type card_type && number.match card_type.pattern
+        for card_type in (card for card in card_types when card.name in options.accept)
+            if number.match card_type.pattern
                 return card_type
 
         null
-    is_accepted_card_type = (card_type) ->
-        card_type.name in (card_type.name for card_type in card_types)
-        
-        return false
+
     is_valid_luhn = (number) ->
         sum = 0
 
