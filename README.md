@@ -17,26 +17,25 @@ For instructions see the official [jQuery Credit Card Validator homepage](http:/
 1. [Open a new issue](https://github.com/PawelDecowski/jQuery-CreditCardValidator/issues/new) (but make sure it’s not a duplicate). Let’s discuss it before you start writing code.
 2. Grab the latest [stable](https://github.com/PawelDecowski/jQuery-CreditCardValidator/tree/master) commit.
 3. Create a topic branch according to this naming scheme:
-
+   
    `type/description`
 
    Where `type` is one of:
-
    * `feature`
    * `bug`
    * `chore`
 
    And `description` is an all-lowercase, hyphen-separated description of what the branch is about.
 
-   Examples:
-
+   ### Examples:
    * `feature/visa-support`
    * `bug/broken-mastercard-detection`
    * `chore/refactor-validate-function`
 
+   Be concise but descriptive.
+
 4. Commit your changes to the topic branch.
 5. Make a pull request.
-
 
 ## Releases
 
@@ -75,8 +74,6 @@ There are no development releases. All features, bugs and chores are developed i
 * MIT licence.
 
   It’s much clearer than any other licences. It means you can use jQuery CC Validator in any way you want as long as you include the copyright notice and licence text (found at the top of the source file).
-
-
 
 ### pre-1.0
 
