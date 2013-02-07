@@ -131,9 +131,14 @@ pre {
     code {
         display: block;
         line-height: 20px;
+        margin-bottom: @line-height;
         overflow: scroll;
         padding: @line-height / 2 - 2px 20px;
     }
+}
+
+p + pre code {
+    margin-top: -@line-height;
 }
 
 .demo .numbers {
@@ -249,7 +254,7 @@ form {
     }
 
     input {
-        .box-shadow(inset 0 1px 3px -1px #aaa); 
+        .box-shadow(inset 0 1px 3px -1px #aaa);
 
         border: 1px solid #aaa;
         border-color: #aaa #ddd #ddd #aaa;

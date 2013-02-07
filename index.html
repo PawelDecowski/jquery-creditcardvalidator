@@ -107,12 +107,21 @@
         <div class="example">
             <h3>How to use it</h3>
 
+            <p>The function’s signature is:</p>
+            <pre><code>.validateCreditCard( callback(result) [, options] )</code></pre>
+
+            <p>So the basic usage looks like this:</p>
+
             <pre><code>$('#cc_number').validateCreditCard(function(result)
 {
-    alert('CC type: ' + result.card_type
+    alert('CC type: ' + result.card_type.name
       + '\nLength validation: ' + result.length_valid
       + '\nLuhn validation: + result.luhn_valid');
 });</code></pre>
+
+            <p>Or with <code>options</code> specified:</p>
+
+            <pre><code>$('#cc_number').validateCreditCard(function(result) { ... }, { accept: ['visa', 'mastercard'] })</code></pre>
         </div>
 
         <h3>How it works</h3>
@@ -135,6 +144,12 @@
             </li>
             <li><code>length_valid</code> &mdash; <code>true</code> if the number length is valid, <code>false</code> otherwise</li>
             <li><code>luhn_valid</code> &mdash; <code>true</code> if the Luhn checksum is correct, <code>false</code> otherwise</li>
+        </ul>
+
+        <p>The second parameter currently supports one option:</p>
+
+        <ul class="list">
+            <li><code>accept</code> (optional) — list of accepted credit cards, eg <code>['visa', 'amex']</code>; if not specified, all supported cards are accepted</li>
         </ul>
 
         <h3 id="supported_card_types">Supported card types and corresponding string descriptors</h3>
@@ -160,7 +175,7 @@
         </div>
 
         <div class="footer">
-            <p>&copy;2012 <a href="http://twitter.com/PawelDecowski">Pawel Decowski</a></p>
+            <p>&copy;2012–2013 <a href="http://twitter.com/PawelDecowski">Pawel Decowski</a></p>
             <p class="fork_me"><a href="http://github.com/PawelDecowski/jQuery-CreditCardValidator/"><img src="https://a248.e.akamai.net/assets.github.com/img/e6bef7a091f5f3138b8cd40bc3e114258dd68ddf/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub"></a></p>
         </p>
     </div>

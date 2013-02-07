@@ -18,10 +18,11 @@ $ ->
 
         if result.card_type.name == 'maestro'
             $('.vertical.maestro').slideDown(duration: 200).animate(opacity: 1, { queue: false });
-        else   
+        else
             $('.vertical.maestro').slideUp(duration: 200).animate(opacity: 0, { queue: false, duration: 200 });
 
         if result.length_valid and result.luhn_valid
             $('#card_number').addClass 'valid';
         else
             $('#card_number').removeClass 'valid';
+    , { accept: ['visa', 'visa_electron', 'mastercard', 'maestro', 'discover'] }
