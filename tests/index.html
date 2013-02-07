@@ -1,0 +1,164 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>jQuery Credit Card Validator Unit Tests</title>
+        <link rel="stylesheet" href="lib/qunit.css">
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+        <script src="lib/qunit.js"></script>
+        <script src="../jquery.creditCardValidator.js"></script>
+        <script>
+            /*
+            * QUnit unit test suite for the jQuery Credit Card Validator plugin.
+            *
+            * To add a new test card, simply add another object literal to the following `cards` array. The format of the object is as follows:
+            *
+            * {
+            *   type: card_type                 //String, required
+            *   number: card_number             //String, required
+            *   invalidLuhn: invalid_luhn       //Boolean, optional
+            *   invalidLength: invalid_length   //Boolean, optional
+            * }
+            *
+            * `invalidLuhn` should be present and set to `true` if the number is not expected to pass Luhn validation.
+            * `invalidLength` should be present and set to `true` if the number is not expected to pass length validation.
+            */
+            var cards = [
+                    {
+                        type: "amex",
+                        number: "378282246310005"
+                    },
+                    {
+                        type: "amex",
+                        number: "378734493671000"
+                    },
+                    {
+                        type: "amex",
+                        number: "370000000000000",
+                        invalidLuhn: true
+                    },
+                    {
+                        type: "amex",
+                        number: "3700000",
+                        invalidLuhn: true,
+                        invalidLength: true
+                    },
+                    {
+                        type: "discover",
+                        number: "6011111111111117"
+                    },
+                    {
+                        type: "discover",
+                        number: "6011000990139424"
+                    },
+                    {
+                        type: "discover",
+                        number: "6011000990139429",
+                        invalidLuhn: true
+                    },
+                    {
+                        type: "discover",
+                        number: "6011000",
+                        invalidLuhn: true,
+                        invalidLength: true
+                    },
+                    {
+                        type: "jcb",
+                        number: "3530111333300000"
+                    },
+                    {
+                        type: "jcb",
+                        number: "3566002020360505"
+                    },
+                    {
+                        type: "jcb",
+                        number: "3560000000000000",
+                        invalidLuhn: true
+                    },
+                    {
+                        type: "jcb",
+                        number: "356000",
+                        invalidLuhn: true,
+                        invalidLength: true
+                    },
+                    {
+                        type: "mastercard",
+                        number: "5555555555554444"
+                    },
+                    {
+                        type: "mastercard",
+                        number: "5105105105105100"
+                    },
+                    {
+                        type: "mastercard",
+                        number: "5105105105105109",
+                        invalidLuhn: true
+                    },
+                    {
+                        type: "mastercard",
+                        number: "510500",
+                        invalidLuhn: true,
+                        invalidLength: true
+                    },
+                    {
+                        type: "visa",
+                        number: "4111111111111111"
+                    },
+                    {
+                        type: "visa",
+                        number: "4111111111111112",
+                        invalidLuhn: true
+                    },
+                    {
+                        type: "visa",
+                        number: "4012888888881881"
+                    },
+                    {
+                        type: "visa",
+                        number: "411111",
+                        invalidLuhn: true,
+                        invalidLength: true
+                    },
+                    {
+                        type: null,
+                        number: "00000000",
+                        invalidLuhn: true,
+                        invalidLength: true
+                    }
+                ],
+                interval = setInterval(function() {
+                    var input = $("#cardNumber"),
+                        card = cards.shift();
+
+                    input.val(card.number).trigger("input");
+
+                    input.validateCreditCard(function(result) {
+                        if (result.card_type) {
+                            var card_type = result.card_type.name;
+                        } else {
+                            result.card_type = null;
+                        }
+
+                        test("Card number " + card.number, function() {
+                            equal(card_type, card.type, "Testing card type (" + card.type + ")");
+                            equal(result.luhn_valid, !card.invalidLuhn, "Testing luhn checksum (" + (!card.invalidLuhn ? "valid" : "invalid") + ")");
+                            equal(result.length_valid, !card.invalidLength, "Testing length (" + (!card.invalidLength ? "valid" : "invalid") + ")");
+                        });
+                    });
+                    if(!cards.length) {
+                        clearInterval(interval);
+                    }
+                }, 50);
+        </script>
+    </head>
+    <body>
+        <h1 id="qunit-header">jQuery Credit Card Validator Unit Tests</h1>
+        <h2 id="qunit-banner"></h2>
+        <div id="qunit-testrunner-toolbar"></div>
+        <h2 id="qunit-userAgent"></h2>
+        <ol id="qunit-tests"></ol>
+        <div id="qunit-fixture">
+            <input id="cardNumber">
+        </div>
+    </body>
+</html>
