@@ -1,7 +1,7 @@
 @import "reset";
 
-@sans: "Helvetica Neue", Verdana, Geneva, Arial, Helvetica, sans-serif;
-@serif: serif;
+@sans: "franklin-gothic-urw", "Helvetica Neue", Verdana, Geneva, Arial, Helvetica, sans-serif;
+@serif: "ff-market-web", Georgia, serif;
 
 @line-height: 32px;
 
@@ -40,7 +40,8 @@
 body {
     color: #333;
     font-family: @sans;
-    font-size: 16px;
+    font-size: 20px;
+    font-weight: 300;
     line-height: @line-height;
     padding: @line-height / 2;
 }
@@ -92,9 +93,15 @@ h1 {
 h2 {
     color: #888;
     font-family: @serif;
-    font-size: 20px;
-    font-style: italic;
+    font-size: 24px;
+    font-weight: normal;
     margin-bottom: @line-height;
+    text-align: right;
+
+    a:hover {
+        border: none;
+        text-decoration: underline;
+    }
 }
 
 h3 {
@@ -103,13 +110,13 @@ h3 {
 }
 
 p {
-    color: #707070;
+    color: #606060;
     margin-bottom: @line-height;
 }
 
 .list {
     color: #707070;
-    font-size: 14px;
+    font-size: 16px;
     list-style: disc;
     margin-bottom: @line-height;
     margin-left: 25px;
@@ -234,6 +241,7 @@ form {
         font-size: 16px;
         font-style: normal;
         margin-bottom: 0;
+        text-align: left;
     }
 
     li {
