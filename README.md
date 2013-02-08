@@ -10,7 +10,7 @@ The latest stable version is always in [master branch](https://github.com/PawelD
 
 ## How to use
 
-For instructions see the official [jQuery Credit Card Validator homepage](http://paweldecowski.github.com/jQuery-CreditCardValidator/).
+For instructions see the official [jQuery Credit Card Validator homepage](http://jquerycreditcardvalidator.com/).
 
 ## How to contribute
 
