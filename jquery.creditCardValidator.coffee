@@ -122,13 +122,13 @@ $.fn.validateCreditCard = (callback, options) ->
     normalize = (number) ->
         number.replace /[ -]/g, ''
 
-    this.bind('input', ->
-        $(this).unbind('keyup') # if input event is fired (so is supported) then unbind keyup
+    this.bind('input.creditcardvalidator', ->
+        $(this).unbind('keyup.creditcardvalidator') # if input event is fired (so is supported) then unbind keyup
         validate.call this
     )
 
     # bind keyup in case input event isn't supported
-    this.bind('keyup', ->
+    this.bind('keyup.creditcardvalidator', ->
         validate.call this
     )
 
