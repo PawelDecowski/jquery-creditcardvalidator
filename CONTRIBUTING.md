@@ -2,8 +2,9 @@
 
 ## How to
 
-1. [Open a new issue](https://github.com/PawelDecowski/jQuery-CreditCardValidator/issues/new) (but make sure it’s not a duplicate). Let’s discuss it before you start writing code.
-2. Grab the latest [stable](https://github.com/PawelDecowski/jQuery-CreditCardValidator/tree/master) commit.
+1. Search [existing issues](https://github.com/PawelDecowski/jquery-creditcardvalidator/issues) to make sure you’re not submitting a duplicate.
+1. [Open a new issue](https://github.com/PawelDecowski/jquery-creditcardvalidator/issues/new). Let’s discuss it before you start writing code.
+2. Grab the latest [stable](https://github.com/PawelDecowski/jquery-creditcardvalidator/tree/master) commit.
 3. Create a topic branch according to this naming scheme:
    
    `type/description`
@@ -29,9 +30,9 @@
 
 ### Stable
 
-Latest stable version can always be found in the [master branch](https://github.com/PawelDecowski/jQuery-CreditCardValidator/tree/master).
+Latest stable version can always be found in the [master branch](https://github.com/PawelDecowski/jquery-creditcardvalidator/tree/master).
 
-You can find current and previous stable releases on the [tags page](https://github.com/PawelDecowski/jQuery-CreditCardValidator/tags).
+You can find current and previous stable releases on the [releases page](https://github.com/PawelDecowski/jquery-creditcardvalidator/tags).
 
 ### Development
 
