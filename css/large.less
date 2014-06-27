@@ -1,0 +1,52 @@
+.wrapper {
+    width: 940px;
+}
+
+.columns {
+    overflow: hidden;
+    width: auto;
+
+    .column {
+        float: left;
+        margin-right: 80px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    &.three .column {
+        width: 260px;
+    }
+}
+
+.intro {
+    float: left;
+    margin-bottom: 0;
+    padding: 0;
+    text-align: left;
+    width: 480px;
+}
+
+.demo {
+    float: right;
+}
+
+#content {
+    width: 940px;
+}
+
+footer {
+    ul {
+        border-bottom: 1px dotted #404046;
+        border-right: none;
+        float: none;
+        margin-bottom: @line-height * .50 - 1;
+        padding-bottom: @line-height * .40;
+        width: 100%;
+
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+}
