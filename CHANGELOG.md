@@ -18,7 +18,7 @@
   $('#cc_number').validateCreditCard({ accept: ['visa', 'mastercard'] })
   ```
 
-* Redesigned demo page — thanks to [Relish](http://relish.io)
+* Redesigned [demo page](http://jquerycreditcardvalidator.com) — thanks to [Relish](http://relish.io)
 
 * MIT licence.
 
