@@ -75,6 +75,19 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/jquery.creditCardValidator.coffee": {
+		"createSourceMap": 0,
+		"fileType": 32,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/jquery.creditCardValidator.coffee",
+		"minifyOutput": 0,
+		"outputAbbreviatedPath": "\/jquery.creditCardValidator.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"syntaxCheckerStyle": 1
+		},
 	"\/reset.less": {
 		"allowInsecureImports": 0,
 		"createSourceMap": 0,
