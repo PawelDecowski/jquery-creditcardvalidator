@@ -129,10 +129,15 @@ $.fn.validateCreditCard = (callback, options) ->
             luhn_valid = is_valid_luhn number
             length_valid = is_valid_length number, card_type
 
-        callback
+        result =
             card_type: card_type
             luhn_valid: luhn_valid
             length_valid: length_valid
+
+        if bind
+            callback result
+
+        result
 
     validate = ->
         number = normalize $(this).val()
@@ -152,9 +157,10 @@ $.fn.validateCreditCard = (callback, options) ->
             validate.call this
         )
 
-        # run validation straight away in case the card number is prefilled
+        # run validation straight away if the card number is prefilled
         validate.call this unless this.length is 0
     else
+        # if not binding an event, run validation immediataly and return result
         return validate.call this
 
     this
