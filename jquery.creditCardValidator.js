@@ -31,7 +31,7 @@ IN THE SOFTWARE.
   $ = jQuery;
 
   $.fn.validateCreditCard = function(callback, options) {
-    var card, card_type, card_types, get_card_type, is_valid_length, is_valid_luhn, normalize, validate, validate_number, _i, _len, _ref;
+    var bind, card, card_type, card_types, get_card_type, is_valid_length, is_valid_luhn, normalize, validate, validate_number, _i, _len, _ref;
     card_types = [
       {
         name: 'amex',
@@ -75,6 +75,16 @@ IN THE SOFTWARE.
         valid_length: [16]
       }
     ];
+    bind = false;
+    if (callback) {
+      if (typeof callback === 'object') {
+        options = callback;
+        bind = false;
+        callback = null;
+      } else if (typeof callback === 'function') {
+        bind = true;
+      }
+    }
     if (options == null) {
       options = {};
     }
@@ -172,15 +182,19 @@ IN THE SOFTWARE.
     normalize = function(number) {
       return number.replace(/[ -]/g, '');
     };
-    this.on('input', function() {
-      $(this).off('keyup');
+    if (bind) {
+      this.on('input', function() {
+        $(this).off('keyup');
+        return validate.call(this);
+      });
+      this.on('keyup', function() {
+        return validate.call(this);
+      });
+      if (this.length !== 0) {
+        validate.call(this);
+      }
+    } else {
       return validate.call(this);
-    });
-    this.on('keyup', function() {
-      return validate.call(this);
-    });
-    if (this.length !== 0) {
-      validate.call(this);
     }
     return this;
   };

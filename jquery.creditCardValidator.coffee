@@ -78,6 +78,17 @@ $.fn.validateCreditCard = (callback, options) ->
         }
     ]
 
+    bind = false
+
+    if callback
+        if typeof callback == 'object'
+            # callback has been skipped and only options parameter has been passed
+            options = callback
+            bind = false
+            callback = null
+        else if typeof callback == 'function'
+            bind = true
+
     options ?= {}
 
     options.accept ?= (card.name for card in card_types)
@@ -130,17 +141,20 @@ $.fn.validateCreditCard = (callback, options) ->
     normalize = (number) ->
         number.replace /[ -]/g, ''
 
-    this.on('input', ->
-        $(this).off('keyup') # if input event is fired (so is supported) then unbind keyup
-        validate.call this
-    )
+    if bind
+        this.on('input', ->
+            $(this).off('keyup') # if input event is fired (so is supported) then unbind keyup
+            validate.call this
+        )
 
-    # bind keyup in case input event isn't supported
-    this.on('keyup', ->
-        validate.call this
-    )
+        # bind keyup in case input event isn't supported
+        this.on('keyup', ->
+            validate.call this
+        )
 
-    # run validation straight away in case the card number is prefilled
-    validate.call this unless this.length is 0
+        # run validation straight away in case the card number is prefilled
+        validate.call this unless this.length is 0
+    else
+        return validate.call this
 
     this
