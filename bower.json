@@ -6,6 +6,7 @@
     "Pawel Decowski <pawel.decowski@gmail.com> (http://about.me/PawelDecowski)"
   },
   "version": "1.0.0",
+  "main": "jquery.creditCardValidator.js",
   "license": "MIT",
   "repository": {
     "type": "git",
