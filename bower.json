@@ -2,10 +2,11 @@
   "name": "jquery-creditcardvalidator",
   "description": "jQuery Credit Card Validator detects and validates credit card numbers. It’ll tell you the detected credit card type and whether the number length and Luhn checksum are valid for the type of card.",
   "homepage": "jquerycreditcardvalidator.com",
-  "authors": {
+  "authors": [
     "Pawel Decowski <pawel.decowski@gmail.com> (http://about.me/PawelDecowski)"
-  },
+  ],
   "version": "1.0.0",
+  "main": "jquery.creditCardValidator.js",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -13,6 +14,6 @@
   },
   "ignore": [
     "tests/*",
-    "config.codekit",
+    "config.codekit"
   ]
 }
