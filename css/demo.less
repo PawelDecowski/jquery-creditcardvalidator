@@ -265,8 +265,10 @@ header {
 }
 
 .demo {
+    height: @line-height * 17;
     margin: 0 auto;
     position: relative;
+    width: 327px;
 
     h3 {
         background: url(../images/images.png) top no-repeat;
@@ -285,6 +287,7 @@ header {
     padding: @line-height / 2 20px;
     position: absolute;
     top: 156px;
+    z-index: 10;
 }
 
 .demo .numbers p {
@@ -299,6 +302,47 @@ header {
     background-color: #fff;
     margin-bottom: @line-height * 5;
     padding: 0 20px;
+}
+
+#carbonads {
+    border: 1px solid #e5e5e5;
+    border-left-style: none;
+    border-right-style: none;
+    clear: both;
+    font-size: 13px;
+    line-height: 20px;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: @line-height / 2 - 1px 0;
+    width: 300px;
+
+    a {
+        color: #777;
+
+        &:hover {
+            border-bottom: none;
+        }
+    }
+}
+
+.carbon-img { 
+    float: left;
+    margin-right: 20px;
+
+    img {
+        display: block
+    }
+}
+
+.carbon-text {
+    float: right;
+    width: 150px;
+}
+
+.carbon-poweredby {
+    color: #bbb !important;
+    float: right;
+    font-size: 11px;
 }
 
 #features {
@@ -350,7 +394,9 @@ form {
     background-color: #f9f9f7;
     border: 1px solid #fff;
     margin: 0 auto 0;
+    left: 0;
     padding: 13px 20px;
+    position: absolute;
     width: 287px;
 
     h2 {
