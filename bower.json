@@ -1,0 +1,32 @@
+{
+  "name": "jquery-creditcardvalidator",
+  "version": "0.0.1",
+  "homepage": "http://jquerycreditcardvalidator.com/",
+  "authors": [
+    "Pawel Decowski"
+  ],
+  "description": "Detect and validate credit card numbers",
+  "main": "jquery.creditCardValidator.js",
+  "keywords": [
+    "credit",
+    "debit"
+    "visa",
+    "mastercard",
+    "discover",
+    "amex",
+    "americanexpress",
+    "card",
+    "validation",
+    "cc",
+    "types",
+    "payment",
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
