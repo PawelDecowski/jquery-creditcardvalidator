@@ -2,9 +2,15 @@
 
 ## 1.0
 
-* Unit tests — thanks to [James Allardice](https://github.com/jamesallardice)
+### Breaking changes
 
-* Binding is now optional — thanks to [Tanner M Young](https://github.com/tmyoung)
+* Minimum required version of jQuery is now 1.7. This is because the events are now attached using `.on` instead of `.bind`. The former is not available in jQuery prior to 1.7.
+
+### New features
+
+* Unit tests — thanks to [James Allardice](https://github.com/jamesallardice).
+
+* Binding is now optional — thanks to [Tanner M Young](https://github.com/tmyoung).
 
   ```
   .validateCreditCard( [options] )
@@ -12,23 +18,29 @@
 
   Called on an input field validates the number and *returns* a `result` object.
 
-* Ability to pass an array of accepted credit cards — thanks to [gabrieljoelc](https://github.com/gabrieljoelc)
+* Ability to pass an array of accepted credit cards — thanks to [gabrieljoelc](https://github.com/gabrieljoelc).
 
   ```
   $('#cc_number').validateCreditCard({ accept: ['visa', 'mastercard'] })
   ```
 
-* `this` variable in the context of callback refers to the input element the validation is bound to
+* `this` variable in the context of callback refers to the input element the validation is bound to.
 
   ```
   $('#cc_number').validateCreditCard(function() { console.log(this.val()) })
   ```
 
-  The code above will log the value of the credit card number field to the console every time the value changes
+  The code above will log the value of the credit card number field to the console every time the value changes.
 
-* Added a basic example of usage (in the `example` directory)
+### Bug fixes
 
-* Redesigned [demo page](http://jquerycreditcardvalidator.com) — thanks to [Relish](https://relish.io)
+* Events are now namespaced. This prevents accidental unbinding of events attached by other plugins.
+
+### Other changes
+
+* Added a basic example of usage (in the `example` directory).
+
+* Redesigned [demo page](http://jquerycreditcardvalidator.com) — thanks to [Relish](https://relish.io).
 
 * MIT licence.
 
