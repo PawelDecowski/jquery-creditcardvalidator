@@ -586,12 +586,6 @@ form label {
   font-size: 14px;
   font-weight: 400;
 }
-form label small {
-  color: #aaa;
-  font-size: 11px;
-  line-height: 11px;
-  text-transform: uppercase;
-}
 form input {
   background-color: #fff;
   border: 1px solid #e5e5e5;
