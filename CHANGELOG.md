@@ -18,7 +18,17 @@
   $('#cc_number').validateCreditCard({ accept: ['visa', 'mastercard'] })
   ```
 
-* Redesigned [demo page](http://jquerycreditcardvalidator.com) — thanks to [Relish](http://relish.io)
+* `this` variable in the context of callback refers to the input element the validation is bound to
+
+  ```
+  $('#cc_number').validateCreditCard(function() { console.log(this.val()) })
+  ```
+
+  The code above will log the value of the credit card number field to the console every time the value changes
+
+* Added a basic example of usage (in the `example` directory)
+
+* Redesigned [demo page](http://jquerycreditcardvalidator.com) — thanks to [Relish](https://relish.io)
 
 * MIT licence.
 
@@ -26,4 +36,4 @@
 
 ## pre-1.0
 
-jQuery Credit Card validator was released more than two years before turning 1.0. It had gone through a lot of changes but wasn’t versioned so everything pre-1.0 is to be treated as *alpha*.
+jQuery Credit Card Validator was released three years before turning 1.0. It had gone through a lot of changes but wasn’t versioned so everything pre-1.0 is to be treated as *alpha*.
