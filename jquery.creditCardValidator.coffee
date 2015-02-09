@@ -112,6 +112,7 @@ $.fn.validateCreditCard = (callback, options) ->
 
         callback
             card_type: card_type
+            valid: luhn_valid and length_valid
             luhn_valid: luhn_valid
             length_valid: length_valid
 
