@@ -314,6 +314,7 @@ header {
     margin: 0 auto;
     overflow: hidden;
     padding: @line-height / 2 - 1px 0;
+    position: relative;
     width: 300px;
 
     a {
@@ -340,9 +341,11 @@ header {
 }
 
 .carbon-poweredby {
-    color: #bbb !important;
-    float: right;
+    color: #ccc !important;
     font-size: 11px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
 }
 
 #features {
@@ -410,6 +413,19 @@ form {
 
     li {
         margin: 8px 0;
+
+        .help {
+            color: #aaa;
+            display: block;
+            font-size: 11px;
+            font-weight: 400;
+            line-height: @line-height / 2;
+            padding-top: @line-height / 2;
+
+            a {
+                color: lighten(desaturate(@link-color, 25%), 10%);
+            }
+        }
     }
 
     label {
@@ -583,6 +599,12 @@ footer {
         &:last-child {
             border-right: none;
             margin-right: 0;
+        }
+
+        small {
+            color: #777;
+            font-size: 11px;
+            font-weight: 400;
         }
     }
 

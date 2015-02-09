@@ -475,6 +475,7 @@ header ul img {
   margin: 0 auto;
   overflow: hidden;
   padding: 13px 0;
+  position: relative;
   width: 300px;
 }
 #carbonads a {
@@ -495,9 +496,11 @@ header ul img {
   width: 150px;
 }
 .carbon-poweredby {
-  color: #bbb !important;
-  float: right;
+  color: #ccc !important;
   font-size: 11px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
 }
 #features {
   border-bottom: 1px solid #f0f0f0;
@@ -559,6 +562,17 @@ form h2 {
 }
 form li {
   margin: 8px 0;
+}
+form li .help {
+  color: #aaa;
+  display: block;
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 14px;
+  padding-top: 14px;
+}
+form li .help a {
+  color: #76a1cd;
 }
 form label {
   color: #555;
@@ -699,6 +713,11 @@ footer ul:last-child {
   border-right: none;
   margin-right: 0;
 }
+footer ul small {
+  color: #777;
+  font-size: 11px;
+  font-weight: 400;
+}
 footer .wrapper > p {
   font-size: 14px;
   line-height: 28px;
@@ -777,6 +796,7 @@ footer .wrapper > p img {
   .intro {
     float: left;
     margin-bottom: 0;
+    margin-top: 28px;
     padding: 0;
     text-align: left;
     width: 480px;
@@ -807,6 +827,7 @@ footer .wrapper > p img {
     width: 300px;
   }
   .intro {
+    margin-top: 56px;
     width: 570px;
   }
   form {
