@@ -1,25 +1,17 @@
 ###
 jQuery Credit Card Validator
 
-Copyright 2012-2013 Pawel Decowski
+Copyright 2012 Pawel Decowski
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software
-is furnished to do so, subject to the following conditions:
+This work is licensed under the Creative Commons Attribution-ShareAlike 3.0
+Unported License. To view a copy of this license, visit:
 
-The above copyright notice and this permission notice shall be included
-in all copies or substantial portions of the Software.
+http://creativecommons.org/licenses/by-sa/3.0/
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
-OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
-THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
-IN THE SOFTWARE.
+or send a letter to:
+
+Creative Commons, 444 Castro Street, Suite 900,
+Mountain View, California, 94041, USA.
 ###
 
 $ = jQuery
@@ -80,6 +72,7 @@ $.fn.validateCreditCard = (callback, options) ->
             name: 'union_pay'
             pattern: /^62[0-5]/
             valid_length: [ 16..19 ]
+            skip_luhn: true
         }
     ]
 
@@ -125,7 +118,7 @@ $.fn.validateCreditCard = (callback, options) ->
 
         callback
             card_type: card_type
-            luhn_valid: luhn_valid
+            luhn_valid: card_type.skip_luhn or luhn_valid
             length_valid: length_valid
 
     validate = ->
@@ -135,13 +128,13 @@ $.fn.validateCreditCard = (callback, options) ->
     normalize = (number) ->
         number.replace /[ -]/g, ''
 
-    this.on('input', ->
-        $(this).off('keyup') # if input event is fired (so is supported) then unbind keyup
+    this.bind('input', ->
+        $(this).unbind('keyup') # if input event is fired (so is supported) then unbind keyup
         validate.call this
     )
 
     # bind keyup in case input event isn't supported
-    this.on('keyup', ->
+    this.bind('keyup', ->
         validate.call this
     )
 
