@@ -12,7 +12,7 @@
 
 * Binding is now optional — thanks to [Tanner M Young](https://github.com/tmyoung).
 
-  ```
+  ```js
   .validateCreditCard( [options] )
   ```
 
@@ -20,13 +20,13 @@
 
 * Ability to pass an array of accepted credit cards — thanks to [gabrieljoelc](https://github.com/gabrieljoelc).
 
-  ```
+  ```js
   $('#cc_number').validateCreditCard({ accept: ['visa', 'mastercard'] })
   ```
 
 * `this` variable in the context of callback refers to the input element the validation is bound to.
 
-  ```
+  ```js
   $('#cc_number').validateCreditCard(function() { console.log(this.val()) })
   ```
 
