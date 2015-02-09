@@ -79,7 +79,7 @@ $.fn.validateCreditCard = (callback, options) ->
         {
             name: 'union_pay'
             pattern: /^62[0-5]/
-            valid_length: [ 13..16 ]
+            valid_length: [ 16..19 ]
         }
     ]
 
