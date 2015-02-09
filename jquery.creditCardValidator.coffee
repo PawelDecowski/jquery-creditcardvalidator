@@ -1,7 +1,7 @@
 ###
-jQuery Credit Card Validator
+jQuery Credit Card Validator 1.0
 
-Copyright 2012-2013 Pawel Decowski
+Copyright 2012-2015 Pawel Decowski
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -130,13 +130,13 @@ $.fn.validateCreditCard = (callback, options) ->
     normalize = (number) ->
         number.replace /[ -]/g, ''
 
-    this.on('input', ->
-        $(this).off('keyup') # if input event is fired (so is supported) then unbind keyup
+    this.on('input.jccv', ->
+        $(this).unbind('keyup.jccv') # if input event is fired (so is supported) then unbind keyup
         validate.call this
     )
 
     # bind keyup in case input event isn't supported
-    this.on('keyup', ->
+    this.on('keyup.jccv', ->
         validate.call this
     )
 
