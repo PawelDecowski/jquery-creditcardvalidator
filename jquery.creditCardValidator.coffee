@@ -1,7 +1,7 @@
 ###
-jQuery Credit Card Validator
+jQuery Credit Card Validator 1.0
 
-Copyright 2012-2013 Pawel Decowski
+Copyright 2012-2015 Pawel Decowski
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -120,7 +120,7 @@ $.fn.validateCreditCard = (callback, options) ->
     is_valid_length = (number, card_type) ->
         number.length in card_type.valid_length
 
-    validate_number = (number) ->
+    validate_number = (number) =>
         card_type = get_card_type number
         luhn_valid = false
         length_valid = false
@@ -129,38 +129,32 @@ $.fn.validateCreditCard = (callback, options) ->
             luhn_valid = is_valid_luhn number
             length_valid = is_valid_length number, card_type
 
-        result =
-            card_type: card_type
-            luhn_valid: luhn_valid
-            length_valid: length_valid
+        card_type: card_type
+        valid: luhn_valid and length_valid
+        luhn_valid: luhn_valid
+        length_valid: length_valid
 
-        if bind
-            callback result
-
-        result
-
-    validate = ->
+    validate = =>
         number = normalize $(this).val()
         validate_number number
 
     normalize = (number) ->
         number.replace /[ -]/g, ''
 
-    if bind
-        this.on('input', ->
-            $(this).off('keyup') # if input event is fired (so is supported) then unbind keyup
-            validate.call this
-        )
+    if not bind
+        return validate()
 
-        # bind keyup in case input event isn't supported
-        this.on('keyup', ->
-            validate.call this
-        )
+    this.on('input.jccv', =>
+        $(this).off('keyup.jccv') # if input event is fired (so is supported) then unbind keyup
+        callback.call this, validate()
+    )
 
-        # run validation straight away if the card number is prefilled
-        validate.call this unless this.length is 0
-    else
-        # if not binding an event, run validation immediataly and return result
-        return validate.call this
+    # bind keyup in case input event isn't supported
+    this.on('keyup.jccv', =>
+        callback.call this, validate()
+    )
+
+    # run validation straight away in case the card number is prefilled
+    callback.call this, validate()
 
     this
