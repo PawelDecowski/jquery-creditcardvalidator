@@ -131,7 +131,7 @@ $.fn.validateCreditCard = (callback, options) ->
         number.replace /[ -]/g, ''
 
     this.on('input.jccv', ->
-        $(this).unbind('keyup.jccv') # if input event is fired (so is supported) then unbind keyup
+        $(this).off('keyup.jccv') # if input event is fired (so is supported) then unbind keyup
         validate.call this
     )
 

@@ -175,7 +175,7 @@ IN THE SOFTWARE.
       return number.replace(/[ -]/g, '');
     };
     this.on('input.jccv', function() {
-      $(this).unbind('keyup.jccv');
+      $(this).off('keyup.jccv');
       return validate.call(this);
     });
     this.on('keyup.jccv', function() {
