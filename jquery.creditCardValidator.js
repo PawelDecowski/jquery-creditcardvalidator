@@ -74,7 +74,7 @@ IN THE SOFTWARE.
       }, {
         name: 'union_pay',
         pattern: /^62[0-5]/,
-        valid_length: [13, 14, 15, 16]
+        valid_length: [16, 17, 18, 19]
       }
     ];
     if (options == null) {
