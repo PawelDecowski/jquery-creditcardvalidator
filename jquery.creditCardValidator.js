@@ -161,6 +161,7 @@ IN THE SOFTWARE.
         }
         return callback.call(_this, {
           card_type: card_type,
+          valid: luhn_valid && length_valid,
           luhn_valid: luhn_valid,
           length_valid: length_valid
         });
