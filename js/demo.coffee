@@ -20,21 +20,21 @@ $ ->
     $('.vertical.maestro').hide().css opacity: 0
 
     $('#card_number').validateCreditCard (result) ->
-        $('#card_number').removeClass()
+        $(this).removeClass()
 
         if not result.card_type?
             $('.vertical.maestro').slideUp(duration: 200).animate(opacity: 0, { queue: false, duration: 200 })
             return
 
-        $('#card_number').addClass(result.card_type.name)
+        $(this).addClass(result.card_type.name)
 
         if result.card_type.name == 'maestro'
             $('.vertical.maestro').slideDown(duration: 200).animate(opacity: 1, { queue: false });
         else
             $('.vertical.maestro').slideUp(duration: 200).animate(opacity: 0, { queue: false, duration: 200 })
 
-        if result.length_valid and result.luhn_valid
-            $('#card_number').addClass 'valid';
+        if result.valid
+            $(this).addClass 'valid';
         else
-            $('#card_number').removeClass 'valid';
+            $(this).removeClass 'valid';
     , { accept: ['visa', 'visa_electron', 'mastercard', 'maestro', 'discover'] }

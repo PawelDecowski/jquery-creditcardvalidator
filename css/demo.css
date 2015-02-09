@@ -289,6 +289,12 @@ h3 {
   line-height: 56px;
   margin: 0 0 28px 0;
 }
+#content h4 {
+  color: #999;
+  font-size: 28px;
+  font-weight: 400;
+  margin: 56px 0 28px 0;
+}
 p {
   color: #767670;
   margin-bottom: 28px;
