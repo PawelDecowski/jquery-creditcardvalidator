@@ -101,7 +101,7 @@ $.fn.validateCreditCard = (callback, options) ->
     is_valid_length = (number, card_type) ->
         number.length in card_type.valid_length
 
-    validate_number = (number) ->
+    validate_number = (number) =>
         card_type = get_card_type number
         luhn_valid = false
         length_valid = false
@@ -110,7 +110,7 @@ $.fn.validateCreditCard = (callback, options) ->
             luhn_valid = is_valid_luhn number
             length_valid = is_valid_length number, card_type
 
-        callback
+        callback.call this,
             card_type: card_type
             luhn_valid: luhn_valid
             length_valid: length_valid
