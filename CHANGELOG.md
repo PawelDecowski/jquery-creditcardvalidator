@@ -34,6 +34,8 @@
 
 * The result object now includes a `valid` property which is a shorthand for `length_valid && luhn_valid`
 
+* The library is now in [Bower](http://bower.io/search/?q=jquery-creditcardvalidator).
+
 ### Bug fixes
 
 * Events are now namespaced. This prevents accidental unbinding of events attached by other plugins.
