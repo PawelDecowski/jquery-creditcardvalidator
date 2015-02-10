@@ -276,6 +276,9 @@ a.button:active {
   -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.4);
   box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.4);
 }
+a.button small {
+  font-size: 13px;
+}
 em {
   color: #202020;
   font-style: italic;
