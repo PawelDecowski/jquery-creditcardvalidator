@@ -351,8 +351,8 @@
 		},
 	"\/js\/prism.js": {
 		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/js\/prism.js",
 		"outputAbbreviatedPath": "\/js\/min\/prism-min.js",
 		"outputPathIsOutsideProject": 0,
@@ -368,8 +368,14 @@
 	"\/js\/demo.coffee": [
 		{
 			"followForSyntaxChecking": 1,
-			"linkedFileAbbreviatedPath": "\/js\/jquery.creditCardValidator.js",
+			"linkedFileAbbreviatedPath": "\/js\/prism.js",
 			"position": 0,
+			"type": 0
+			},
+		{
+			"followForSyntaxChecking": 1,
+			"linkedFileAbbreviatedPath": "\/js\/jquery.creditCardValidator.js",
+			"position": 1,
 			"type": 0
 			}
 		]
