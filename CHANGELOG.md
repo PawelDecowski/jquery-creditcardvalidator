@@ -32,6 +32,8 @@
 
   The code above will log the value of the credit card number field to the console every time the value changes.
 
+* The result object now includes a `valid` property which is a shorthand for `length_valid && luhn_valid`
+
 ### Bug fixes
 
 * Events are now namespaced. This prevents accidental unbinding of events attached by other plugins.
