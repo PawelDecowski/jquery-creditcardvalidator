@@ -52,6 +52,11 @@ $.fn.validateCreditCard = (callback, options) ->
             valid_length: [ 16..19 ]
         }
         {
+            name: 'visa_dankort'
+            pattern: /^4571/
+            valid_length: [ 16 ]
+        }
+        {
             name: 'visa_electron'
             pattern: /^(4026|417500|4508|4844|491(3|7))/
             valid_length: [ 16 ]
@@ -70,6 +75,11 @@ $.fn.validateCreditCard = (callback, options) ->
             name: 'maestro'
             pattern: /^(5018|5020|5038|6304|6759|676[1-3])/
             valid_length: [ 12..19 ]
+        }
+        {
+            name: 'dankort'
+            pattern: /^5019/
+            valid_length: [ 16 ]
         }
         {
             name: 'discover'
