@@ -8,7 +8,7 @@
     "version": "1.0.0",
     "main": "jquery.creditCardValidator.js",
     "keywords": [
-        "credit", "debit", "visa", "mastercard", "discover", "amex", "american express", "card", "validation", "cc", "credit card", "payment"
+        "credit", "debit", "visa", "mastercard", "discover", "amex", "elo", "american express", "card", "validation", "cc", "credit card", "payment"
     ],
     "license": "MIT",
     "dependencies": {
