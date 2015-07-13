@@ -77,7 +77,7 @@ $.fn.validateCreditCard = (callback, options) ->
             valid_length: [ 16 ]
         }
         {
-            name: 'elo'
+            name: 'elo' 
             pattern: /^((((636368)|(438935)|(504175)|(451416)|(636297))\d{0,10})|((5067)|(4576)|(4011))\d{0,12})$/
             valid_length: [ 16 ] 
         }
