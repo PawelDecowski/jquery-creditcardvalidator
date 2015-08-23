@@ -181,6 +181,11 @@
           + '\nLength validation: ' + result.length_valid
           + '\nLuhn validation: ' + result.luhn_valid);
     });</code></pre>
+
+                <aside>
+                    <p>The plugin uses <code class="language-javascript">input</code> event with a fallback to <code class="language-javascript">keyup</code>. That means, in most browsers, it will run the <code class="language-javascript">callback</code> every time the value changes: regardless of how the change was initiated (keystroke, paste, undo, redo, etc). In browsers that don’t <a href="https://developer.mozilla.org/en-US/docs/Web/Events/input#Browser_compatibility">support <code class="language-javascript">input</code> event</a>, the <code class="language-javascript">callback</code> will be called only when the user releases a key on their keyboard (<code class="language-javascript">keyup</code> event).</p>
+                </aside>
+
                 <p>The value of <code class="language-javascript">this</code> inside the callback is set to the <code class="language-javascript">input</code> element to which the validator was attached:</p>
 
                 <pre><code class="language-javascript">$('#cc_number').validateCreditCard(function(result)

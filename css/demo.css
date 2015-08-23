@@ -315,6 +315,18 @@ p:last-child {
 .list .list {
   margin-bottom: 0;
 }
+aside {
+  background-color: #f2f8fa;
+  border: 1px solid #e0eef3;
+  border-left: 4px solid #e0eef3;
+  font-size: 16px;
+  font-style: italic;
+  margin: 0 0 28px;
+  padding: 13px 27px 13px 24px;
+}
+aside p {
+  color: #789;
+}
 code {
   background-color: #f6f6f0;
   border: 1px solid #e6e6e0;
