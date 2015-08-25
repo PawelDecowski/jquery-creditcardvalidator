@@ -76,6 +76,21 @@ $.fn.validateCreditCard = (callback, options) ->
             pattern: /^(6011|622(12[6-9]|1[3-9][0-9]|[2-8][0-9]{2}|9[0-1][0-9]|92[0-5]|64[4-9])|65)/
             valid_length: [ 16 ]
         }
+        {
+            name: 'elo'
+            pattern: /^([6362]{4})([0-9]{12})/ 
+            valid_length: [ 16 ]
+        }
+        {
+            name: 'hipercard'
+            pattern: /^(3841\d{10}(\d{3})?)|(3841\d{15})/
+            valid_length: [13 .. 19] 
+        }
+        {
+            name: 'aura'
+            pattern: /^(5078\d{2})(\d{2})(\d{11})/
+            valid_length: [16..19] 
+        }
     ]
 
     bind = false
