@@ -106,7 +106,7 @@ $.fn.validateCreditCard = (callback, options) ->
 
     for card_type in options.accept
         if card_type not in (card.name for card in card_types)
-            throw "Credit card type '#{ card_type }' is not supported"
+            throw Error "Credit card type '#{ card_type }' is not supported"
 
     get_card_type = (number) ->
         for card_type in (card for card in card_types when card.name in options.accept)

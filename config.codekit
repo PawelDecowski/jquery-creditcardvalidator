@@ -75,7 +75,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 0
+		"syntaxCheckerStyle": 1
 		},
 	"\/jquery.creditCardValidator.js": {
 		"fileType": 64,
@@ -270,7 +270,7 @@
 			"flagValue": -1
 			},
 		"no_implicit_braces": {
-			"active": 1,
+			"active": 0,
 			"flagValue": -1
 			},
 		"no_implicit_parens": {
