@@ -5,7 +5,7 @@
 1. Search [existing issues](https://github.com/PawelDecowski/jquery-creditcardvalidator/issues) to make sure you’re not submitting a duplicate.
 1. [Open a new issue](https://github.com/PawelDecowski/jquery-creditcardvalidator/issues/new). Let’s discuss it before you start writing code.
 2. Grab the latest [stable](https://github.com/PawelDecowski/jquery-creditcardvalidator/tree/master) commit.
-3. Create a topic branch according to this naming scheme:
+3. Create a development branch according to this naming scheme:
    
    `type/description`
 
@@ -23,7 +23,7 @@
 
    Be concise but descriptive.
 
-4. Commit your changes to the topic branch.
+4. Commit your changes to the development branch.
 5. Make a pull request.
 
 ## Releases
