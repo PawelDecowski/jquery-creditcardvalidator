@@ -95,7 +95,7 @@ $.fn.validateCreditCard = (callback, options) ->
 
     for card_type in options.accept
         if card_type not in (card.name for card in card_types)
-            throw "Credit card type '#{ card_type }' is not supported"
+            throw Error "Credit card type '#{ card_type }' is not supported"
 
     get_card_type = (number) ->
         for card_type in (card for card in card_types when card.name in options.accept)
@@ -120,7 +120,7 @@ $.fn.validateCreditCard = (callback, options) ->
     is_valid_length = (number, card_type) ->
         number.length in card_type.valid_length
 
-    validate_number = (number) =>
+    validate_number = (number) ->
         card_type = get_card_type number
         luhn_valid = false
         length_valid = false
