@@ -1,11 +1,11 @@
 class Range
     constructor: (@trie) ->
         if @trie.constructor != Trie
-            throw Error('Range constructor requires a Trie parameter')
+            throw Error 'Range constructor requires a Trie parameter'
 
     @rangeWithString: (ranges) ->
         if typeof ranges != 'string'
-            throw Error('rangeWithString requires a string parameter')
+            throw Error 'rangeWithString requires a string parameter'
 
         ranges = ranges.replace(/ /g, '')
         ranges = ranges.split ','
@@ -19,7 +19,7 @@ class Range
             else if range.match /^\d+$/
                 trie.push range
             else
-                throw Error("Invalid range '#{r}'")
+                throw Error "Invalid range '#{r}'"
 
         new Range trie
 
