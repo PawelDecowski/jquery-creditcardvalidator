@@ -20,8 +20,8 @@
 		"enableSmartQuotes": 1,
 		"escapeLineBreaks": 0,
 		"fileType": 4096,
-		"ignore": 1,
-		"ignoreWasSetByUser": 1,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/CHANGELOG.md",
 		"maskEmailAddresses": 1,
 		"outputAbbreviatedPath": "\/CHANGELOG.html",
@@ -41,8 +41,8 @@
 		"enableSmartQuotes": 1,
 		"escapeLineBreaks": 0,
 		"fileType": 4096,
-		"ignore": 1,
-		"ignoreWasSetByUser": 1,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/CONTRIBUTING.md",
 		"maskEmailAddresses": 1,
 		"outputAbbreviatedPath": "\/CONTRIBUTING.html",
@@ -91,7 +91,7 @@
 	"\/range.coffee": {
 		"createSourceMap": 0,
 		"fileType": 32,
-		"ignore": 1,
+		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/range.coffee",
 		"minifyOutput": 1,
@@ -108,8 +108,8 @@
 		"enableSmartQuotes": 1,
 		"escapeLineBreaks": 0,
 		"fileType": 4096,
-		"ignore": 1,
-		"ignoreWasSetByUser": 1,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/README.md",
 		"maskEmailAddresses": 1,
 		"outputAbbreviatedPath": "\/README.html",
@@ -154,7 +154,7 @@
 	"\/trie.coffee": {
 		"createSourceMap": 0,
 		"fileType": 32,
-		"ignore": 1,
+		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/trie.coffee",
 		"minifyOutput": 1,
@@ -169,20 +169,6 @@
 	],
 "lastSavedByUser": "Pawel Decowski",
 "manualImportLinks": {
-	"\/jquery.creditCardValidator.coffee": [
-		{
-			"followForSyntaxChecking": 1,
-			"linkedFileAbbreviatedPath": "\/trie.coffee",
-			"position": 0,
-			"type": 0
-			},
-		{
-			"followForSyntaxChecking": 1,
-			"linkedFileAbbreviatedPath": "\/range.coffee",
-			"position": 1,
-			"type": 0
-			}
-		]
 	},
 "projectAttributes": {
 	"bowerAbbreviatedPath": "",
@@ -194,7 +180,7 @@
 	"alwaysUseExternalServer": 0,
 	"animateCSSInjections": 1,
 	"autoApplyPSLanguageSettingsStyle": 0,
-	"autoprefixerBrowserString": "> 1%, last 2 versions, ff 17, opera 12.1",
+	"autoprefixerBrowserString": "> 1%, last 2 versions, Firefox ESR, Opera 12.1",
 	"autoSyncProjectSettingsFile": 1,
 	"browserRefreshDelay": 0,
 	"coffeeAutoOutputPathEnabled": 1,
@@ -235,7 +221,7 @@
 			},
 		"indentation": {
 			"active": 1,
-			"flagValue": 4
+			"flagValue": 2
 			},
 		"line_endings": {
 			"active": 0,
@@ -270,7 +256,7 @@
 			"flagValue": -1
 			},
 		"no_implicit_braces": {
-			"active": 0,
+			"active": 1,
 			"flagValue": -1
 			},
 		"no_implicit_parens": {
