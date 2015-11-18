@@ -86,6 +86,12 @@ $.fn.validateCreditCard = (callback, options) ->
             range: '6011, 622126-622925, 644-649, 65'
             valid_length: [ 16 ]
         }
+        {
+            name: 'dankort'
+            pattern: /^5019/
+            range: '5019'
+            valid_length: [ 16 ]
+        }
     ]
 
     bind = false
