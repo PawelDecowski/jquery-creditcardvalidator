@@ -29,51 +29,61 @@ $.fn.validateCreditCard = (callback, options) ->
         {
             name: 'amex'
             pattern: /^3[47]/
+            range: '34,37'
             valid_length: [ 15 ]
         }
         {
             name: 'diners_club_carte_blanche'
             pattern: /^30[0-5]/
+            range: '300-305'
             valid_length: [ 14 ]
         }
         {
             name: 'diners_club_international'
             pattern: /^36/
+            range: '36'
             valid_length: [ 14 ]
         }
         {
             name: 'jcb'
             pattern: /^35(2[89]|[3-8][0-9])/
+            range: '3528-3589'
             valid_length: [ 16 ]
         }
         {
             name: 'laser'
             pattern: /^(6304|670[69]|6771)/
+            range: '6304, 6706, 6709, 6771'
             valid_length: [ 16..19 ]
         }
         {
             name: 'visa_electron'
             pattern: /^(4026|417500|4508|4844|491(3|7))/
+            range: '4026, 417500, 4508, 4844, 4913, 4917'
             valid_length: [ 16 ]
         }
         {
             name: 'visa'
             pattern: /^4/
+            range: '4'
             valid_length: [ 16 ]
         }
         {
             name: 'mastercard'
             pattern: /^5[1-5]/
+            range: '51-55'
             valid_length: [ 16 ]
         }
         {
             name: 'maestro'
             pattern: /^(5018|5020|5038|6304|6759|676[1-3])/
+            range: '5018, 5020, 5038, 6304, 6759, 6761-6763'
             valid_length: [ 12..19 ]
         }
         {
             name: 'discover'
             pattern: /^(6011|622(12[6-9]|1[3-9][0-9]|[2-8][0-9]{2}|9[0-1][0-9]|92[0-5]|64[4-9])|65)/
+            range: '6011, 622126-622925, 644-649, 65'
             valid_length: [ 16 ]
         }
     ]
@@ -92,6 +102,7 @@ $.fn.validateCreditCard = (callback, options) ->
     options ?= {}
 
     options.accept ?= (card.name for card in card_types)
+    options.regex ?= false
 
     for card_type in options.accept
         if card_type not in (card.name for card in card_types)
@@ -99,8 +110,14 @@ $.fn.validateCreditCard = (callback, options) ->
 
     get_card_type = (number) ->
         for card_type in (card for card in card_types when card.name in options.accept)
-            if number.match card_type.pattern
-                return card_type
+            if options.regex
+                if number.match card_type.pattern
+                    return card_type
+            else
+                r = Range.rangeWithString(card_type.range)
+
+                if r.match(number)
+                    return card_type
 
         null
 
@@ -133,6 +150,7 @@ $.fn.validateCreditCard = (callback, options) ->
         valid: luhn_valid and length_valid
         luhn_valid: luhn_valid
         length_valid: length_valid
+        method: if options.regex then 'RegExp' else 'Trie'
 
     validate = =>
         number = normalize $(this).val()
