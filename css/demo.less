@@ -143,22 +143,27 @@ aside {
     }
 }
 
-code {
+code[class*="language-"] {
+    color: #565650;
+    font-size: 14px;
+}
+
+:not(pre) > code {
     background-color: #f6f6f0;
     border: 1px solid #e6e6e0;
-    color: #565650;
-    font-family: monospace;
-    font-size: 14px;
     padding: 0 3px;
 }
 
-pre {
+pre[class*="language-"] {
+    background-color: #f6f6f0;
+    border: 1px solid #e6e6e0;
+    line-height: 20px;
+    margin-bottom: @line-height;
+    overflow: scroll;
+    padding: @line-height / 2 - 2px 20px;
+
     code {
         display: block;
-        line-height: 20px;
-        margin-bottom: @line-height;
-        overflow: scroll;
-        padding: @line-height / 2 - 2px 20px;
     }
 }
 
@@ -235,7 +240,7 @@ header {
         img {
             display: block;
             margin-top: 1px;
-            margin-bottom: 3px; 
+            margin-bottom: 3px;
         }
     }
 }
@@ -351,7 +356,7 @@ header {
     }
 }
 
-.carbon-img { 
+.carbon-img {
     float: left;
     margin-right: 20px;
 
@@ -525,7 +530,7 @@ form {
 
         &.valid {
             &.visa {
-                background-position: 2px -163px, 260px -87px;  
+                background-position: 2px -163px, 260px -87px;
             }
 
             &.visa_electron {
