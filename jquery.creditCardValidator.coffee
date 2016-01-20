@@ -57,6 +57,12 @@ $.fn.validateCreditCard = (callback, options) ->
             valid_length: [ 16 ]
         }
         {
+            # needs to be put before visa - if it's not elo and starts with 4 - it's visa
+            name: 'elo'
+            pattern: /^(636368|438935|504175|451416|636297|5067|4576|4011)/
+            valid_length: [16]
+        }
+        {
             name: 'visa'
             pattern: /^4/
             valid_length: [ 16 ]
