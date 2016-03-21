@@ -1,0 +1,37 @@
+{
+  "name": "jquery-creditcardvalidator",
+  "version": "1.0.1",
+  "description": "jQuery credit card validation and detection plugin",
+  "main": "jquery.creditCardValidator.js",
+  "directories": {
+    "example": "example",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PawelDecowski/jquery-creditcardvalidator.git"
+  },
+  "keywords": [
+    "credit",
+    "debit",
+    "visa",
+    "mastercard",
+    "discover",
+    "amex",
+    "american express",
+    "card",
+    "validation",
+    "cc",
+    "credit card",
+    "payment"
+  ],
+  "author": "Pawel Decowski (http://about.me/PawelDecowski)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PawelDecowski/jquery-creditcardvalidator/issues"
+  },
+  "homepage": "https://github.com/PawelDecowski/jquery-creditcardvalidator#readme"
+}

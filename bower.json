@@ -5,7 +5,7 @@
     "authors": [
         "Pawel Decowski (http://about.me/PawelDecowski)"
     ],
-    "version": "1.0.0",
+    "version": "1.0.1",
     "main": "jquery.creditCardValidator.js",
     "keywords": [
         "credit", "debit", "visa", "mastercard", "discover", "amex", "american express", "card", "validation", "cc", "credit card", "payment"
