@@ -1,5 +1,10 @@
 # Change log
 
+## 1.0.1
+
+#### Added
+- Added NPM capability
+
 ## 1.0
 
 ### Breaking changes
