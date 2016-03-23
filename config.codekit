@@ -91,7 +91,7 @@
 	"\/range.coffee": {
 		"createSourceMap": 0,
 		"fileType": 32,
-		"ignore": 0,
+		"ignore": 1,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/range.coffee",
 		"minifyOutput": 1,
@@ -154,7 +154,7 @@
 	"\/trie.coffee": {
 		"createSourceMap": 0,
 		"fileType": 32,
-		"ignore": 0,
+		"ignore": 1,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/trie.coffee",
 		"minifyOutput": 1,
@@ -169,11 +169,25 @@
 	],
 "lastSavedByUser": "Pawel Decowski",
 "manualImportLinks": {
+	"\/jquery.creditCardValidator.coffee": [
+		{
+			"followForSyntaxChecking": 1,
+			"linkedFileAbbreviatedPath": "\/trie.coffee",
+			"position": 0,
+			"type": 0
+			},
+		{
+			"followForSyntaxChecking": 1,
+			"linkedFileAbbreviatedPath": "\/range.coffee",
+			"position": 1,
+			"type": 0
+			}
+		]
 	},
 "projectAttributes": {
 	"bowerAbbreviatedPath": "",
 	"displayValue": "cc",
-	"displayValueWasSetByUser": 0,
+	"displayValueWasSetByUser": 1,
 	"iconImageName": "compass_brown"
 	},
 "projectSettings": {
@@ -221,7 +235,7 @@
 			},
 		"indentation": {
 			"active": 1,
-			"flagValue": 2
+			"flagValue": 4
 			},
 		"line_endings": {
 			"active": 0,
@@ -256,7 +270,7 @@
 			"flagValue": -1
 			},
 		"no_implicit_braces": {
-			"active": 1,
+			"active": 0,
 			"flagValue": -1
 			},
 		"no_implicit_parens": {
