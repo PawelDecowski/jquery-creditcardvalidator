@@ -145,11 +145,10 @@ $.fn.validateCreditCard = (callback, options) ->
 
     validate_number = (number) ->
         card_type = get_card_type number
-        luhn_valid = false
+        luhn_valid = is_valid_luhn number
         length_valid = false
 
         if card_type?
-            luhn_valid = is_valid_luhn number
             length_valid = is_valid_length number, card_type
 
         card_type: card_type
