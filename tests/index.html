@@ -16,7 +16,7 @@
         <div id="qunit-fixture">
             <input id="cardNumber">
         </div>
-        
+
         <script>
             /*
             * QUnit unit test suite for the jQuery Credit Card Validator plugin.
@@ -130,6 +130,18 @@
                     invalidLength: true
                 },
                 {
+                    type: "visa",
+                    number: "4556781815037",
+                    invalidLuhn: false,
+                    invalidLength: false
+                },
+                {
+                    type: "dankort",
+                    number: "5019717010103742",
+                    invalidLuhn: false,
+                    invalidLength: false
+                },
+                {
                     type: null,
                     number: "00000000",
                     invalidLuhn: true,
@@ -143,12 +155,12 @@
             while (cards.length) {
                 (function() {
                     var card = cards.shift();
-                    
+
                     input.val(card.number);
 
                     var result = input.validateCreditCard();
 
-                    QUnit.test("Card number " + card.number, function(assert) {                  
+                    QUnit.test("Card number " + card.number, function(assert) {
                         assert.equal(result.card_type === null ? null : result.card_type.name, card.type, "Card type is " + (card.type === null ? "unknown" : card.type.toUpperCase()));
                         assert.equal(result.luhn_valid, !card.invalidLuhn, "Luhn checksum is " + (card.invalidLuhn ? "invalid" : "valid"));
                         assert.equal(result.length_valid, !card.invalidLength, "Length is " + (card.invalidLength ? "invalid" : "valid"));
