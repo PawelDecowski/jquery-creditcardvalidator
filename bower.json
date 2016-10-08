@@ -26,6 +26,8 @@
         "config.codekit",
         "CONTRIBUTING.md",
         "jquery.creditCardValidator.coffee",
+        "trie.coffee",
+        "range.coffee",
         "README.md"
     ]
 }
