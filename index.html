@@ -52,7 +52,7 @@
                    and if the number length and <a href="http://en.wikipedia.org/wiki/Luhn_algorithm">Luhn
                    checksum</a> are valid for the type of card.</p>
 
-                <p class="download"><a class="button" href="https://github.com/PawelDecowski/jQuery-CreditCardValidator/zipball/master">Download now <small>v1.0</small></a> <span>or</span> <a href="https://github.com/PawelDecowski/jQuery-CreditCardValidator/">view on GitHub</a></p>
+                <p class="download"><a class="button" href="https://github.com/PawelDecowski/jQuery-CreditCardValidator/zipball/master">Download now <small>v1.1</small></a> <span>or</span> <a href="https://github.com/PawelDecowski/jQuery-CreditCardValidator/">view on GitHub</a></p>
             </div>
             <div class="demo">
                 <h3 id="try-it">Try it</h3>
@@ -154,8 +154,9 @@
                         <code class="language-javascript">card_type</code> &mdash; an object with the below properties, or <code class="language-javascript">null</code> if card type unknown
                         <ul class="list">
                             <li><code class="language-javascript">name</code> &mdash; one of the <a href="#supported-cards">strings describing the card type</a>, eg <code class="language-javascript">visa</code></li>
-                            <li><code class="language-javascript">pattern</code> &mdash; regular expression used to match the card type, eg <code class="language-javascript">/^4/</code></li>
-                            <li><code class="language-javascript">length</code> &mdash; a list of valid lengths for the card type, eg <code class="language-javascript">[13, 16]</code>
+                            <li><code class="language-javascript">pattern</code> <small>(only if using regex matching)</small> &mdash; regular expression used to match the card type, eg <code class="language-javascript">/^4/</code></li>
+                            <li><code class="language-javascript">range</code> <small>(only if using trie matching)</small> &mdash; range string used to match the card type, eg <code class="language-javascript">'6011, 622126-622925, 644-649, 65'</code></li>
+                            <li><code class="language-javascript">length</code> &mdash; a list of valid lengths for the card type, eg <code class="language-javascript">[13, 16]</code></li>
                         </ul>
                     </li>
                     <li><code class="language-javascript">valid</code> &mdash; <code class="language-javascript">true</code> if the number is valid, <code class="language-javascript">false</code> otherwise
@@ -195,7 +196,7 @@
 
                 <p>The above code will alert the value of the <code class="language-javascript">#cc_number</code> field each time it changes.</p>
 
-                <p>If the <code class="language-javascript">callback</code> parameter is ommited, the function will <em>return</em> the <code class="language-javascript">result</code> object:</p>
+                <p>If the <code class="language-javascript">callback</code> parameter is omitted, the function will <em>return</em> the <code class="language-javascript">result</code> object:</p>
 
                 <pre><code class="language-javascript">var result = $('#cc_number').validateCreditCard();
 
@@ -207,10 +208,16 @@ alert('CC type: ' + result.card_type.name
                 <h4>Options</h4>
 
                 <ul class="list">
-                    <li><code class="language-javascript">accept</code> (optional) — list of accepted credit cards, eg <code class="language-javascript">['visa', 'amex']</code>; if not specified, all supported cards are accepted</li>
-                </ul>
+                    <li>
+                        <code class="language-javascript">accept</code> (optional) — list of accepted credit cards, eg <code class="language-javascript">['visa', 'amex']</code>; if not specified, all supported cards are accepted
+                        <pre><code class="language-javascript">var result = $('#cc_number').validateCreditCard({ accept: ['visa', 'mastercard'] })</code></pre>
+                    </li>
+                    <li>
+                        <code class="language-javascript">regex</code> (optional) — set to <code class="language-javascript">true</code> to match using deprecated RegEx engine instead of the default trie engine; this has no effect on the result. RegEx matching is available for backwards compatibility in case you encounter problems.
 
-                <pre><code class="language-javascript">var result = $('#cc_number').validateCreditCard({ accept: ['visa', 'mastercard'] })</code></pre>
+                        <aside><p>RegEx matching will be removed in a future release so try to use trie engine unless you’re having problems with it. In which case <a href="https://github.com/PawelDecowski/jquery-creditcardvalidator/issues/new">report it</a>.</p></aside>
+                    </li>
+                </ul>
             </div>
 
             <div id="supported-cards">
@@ -220,6 +227,7 @@ alert('CC type: ' + result.card_type.name
 
                 <ul class="list">
                     <li>American Express &mdash; <code class="language-javascript">amex</code></li>
+                    <li>Dankort &mdash; <code class="language-javascript">dankort</code></li>
                     <li>Diners Club Carte Blanche &mdash; <code class="language-javascript">diners_club_carte_blanche</code></li>
                     <li>Diners Club International &mdash; <code class="language-javascript">diners_club_international</code></li>
                     <li>Diners Club United States &amp; Canada &mdash; <code class="language-javascript">mastercard</code> (it is actually a MasterCard)</li>
@@ -228,6 +236,7 @@ alert('CC type: ' + result.card_type.name
                     <li>Laser &mdash; <code class="language-javascript">laser</code></li>
                     <li>Maestro &mdash; <code class="language-javascript">maestro</code></li>
                     <li>MasterCard &mdash; <code class="language-javascript">mastercard</code></li>
+                    <li>UATP &mdash; <code class="language-javascript">uatp</code></li>
                     <li>Visa &mdash; <code class="language-javascript">visa</code></li>
                     <li>Visa Electron &mdash; <code class="language-javascript">visa_electron</code></li>
                 </ul>

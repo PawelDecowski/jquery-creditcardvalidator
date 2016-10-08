@@ -7,14 +7,16 @@
 
 code[class*="language-"],
 pre[class*="language-"] {
+	color: black;
 	text-shadow: 0 1px white;
-	font-family: Consolas, Monaco, 'Andale Mono', monospace;
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
 	direction: ltr;
 	text-align: left;
 	white-space: pre;
 	word-spacing: normal;
 	word-break: normal;
-
+	word-wrap: normal;
+	line-height: 1.5;
 
 	-moz-tab-size: 4;
 	-o-tab-size: 4;
@@ -29,11 +31,13 @@ pre[class*="language-"] {
 pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
 code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
 	text-shadow: none;
+	background: #b3d4fc;
 }
 
 pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
 code[class*="language-"]::selection, code[class*="language-"] ::selection {
 	text-shadow: none;
+	background: #b3d4fc;
 }
 
 @media print {
@@ -45,17 +49,21 @@ code[class*="language-"]::selection, code[class*="language-"] ::selection {
 
 /* Code blocks */
 pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
 	overflow: auto;
 }
 
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
+	background: #f5f2f0;
 }
 
 /* Inline code */
 :not(pre) > code[class*="language-"] {
 	padding: .1em;
 	border-radius: .3em;
+	white-space: normal;
 }
 
 .token.comment,
@@ -78,14 +86,17 @@ pre[class*="language-"] {
 .token.boolean,
 .token.number,
 .token.constant,
-.token.symbol {
+.token.symbol,
+.token.deleted {
 	color: #905;
 }
 
 .token.selector,
 .token.attr-name,
 .token.string,
-.token.builtin {
+.token.char,
+.token.builtin,
+.token.inserted {
 	color: #690;
 }
 
@@ -93,10 +104,9 @@ pre[class*="language-"] {
 .token.entity,
 .token.url,
 .language-css .token.string,
-.style .token.string,
-.token.variable {
+.style .token.string {
 	color: #a67f59;
-	background: hsla(0,0%,100%,.5);
+	background: hsla(0, 0%, 100%, .5);
 }
 
 .token.atrule,
@@ -105,14 +115,22 @@ pre[class*="language-"] {
 	color: #07a;
 }
 
+.token.function {
+	color: #DD4A68;
+}
 
 .token.regex,
-.token.important {
+.token.important,
+.token.variable {
 	color: #e90;
 }
 
-.token.important {
+.token.important,
+.token.bold {
 	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
 }
 
 .token.entity {

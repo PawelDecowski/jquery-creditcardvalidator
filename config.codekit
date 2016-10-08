@@ -23,7 +23,7 @@
 		"outputAbbreviatedPath": "\/css\/demo.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 0,
+		"outputStyle": 1,
 		"relativeURLS": 0,
 		"shouldRunAutoprefixer": 0,
 		"shouldRunBless": 0,
@@ -100,7 +100,7 @@
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/css\/prism.less",
-		"outputAbbreviatedPath": "\/css\/prism.css",
+		"outputAbbreviatedPath": "\/css\/prism.less",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -331,7 +331,7 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/js\/demo.coffee",
-		"minifyOutput": 0,
+		"minifyOutput": 1,
 		"outputAbbreviatedPath": "\/js\/demo.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
@@ -363,7 +363,7 @@
 	"\/js\/prism.js": {
 		"fileType": 64,
 		"ignore": 1,
-		"ignoreWasSetByUser": 1,
+		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/js\/prism.js",
 		"outputAbbreviatedPath": "\/js\/min\/prism-min.js",
 		"outputPathIsOutsideProject": 0,
@@ -379,13 +379,13 @@
 	"\/js\/demo.coffee": [
 		{
 			"followForSyntaxChecking": 1,
-			"linkedFileAbbreviatedPath": "\/js\/prism.js",
+			"linkedFileAbbreviatedPath": "\/js\/jquery.creditCardValidator.js",
 			"position": 0,
 			"type": 0
 			},
 		{
 			"followForSyntaxChecking": 1,
-			"linkedFileAbbreviatedPath": "\/js\/jquery.creditCardValidator.js",
+			"linkedFileAbbreviatedPath": "\/js\/prism.js",
 			"position": 1,
 			"type": 0
 			}
