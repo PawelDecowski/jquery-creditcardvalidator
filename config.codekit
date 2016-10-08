@@ -77,22 +77,11 @@
 		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
-	"\/jquery.creditCardValidator.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/jquery.creditCardValidator.js",
-		"outputAbbreviatedPath": "\/min\/jquery.creditCardValidator-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
 	"\/range.coffee": {
 		"createSourceMap": 0,
 		"fileType": 32,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/range.coffee",
 		"minifyOutput": 1,
 		"outputAbbreviatedPath": "\/range.js",
@@ -145,7 +134,7 @@
 		"ignore": 1,
 		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/tests\/lib\/qunit.js",
-		"outputAbbreviatedPath": "\/tests\/lib\/min\/qunit-ck.js",
+		"outputAbbreviatedPath": "\/tests\/lib\/min\/qunit-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
@@ -154,8 +143,8 @@
 	"\/trie.coffee": {
 		"createSourceMap": 0,
 		"fileType": 32,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/trie.coffee",
 		"minifyOutput": 1,
 		"outputAbbreviatedPath": "\/trie.js",
@@ -194,7 +183,7 @@
 	"alwaysUseExternalServer": 0,
 	"animateCSSInjections": 1,
 	"autoApplyPSLanguageSettingsStyle": 0,
-	"autoprefixerBrowserString": "> 1%, last 2 versions, ff 17, opera 12.1",
+	"autoprefixerBrowserString": "> 1%, last 2 versions, Firefox ESR, Opera 12.1",
 	"autoSyncProjectSettingsFile": 1,
 	"browserRefreshDelay": 0,
 	"coffeeAutoOutputPathEnabled": 1,
@@ -235,7 +224,7 @@
 			},
 		"indentation": {
 			"active": 1,
-			"flagValue": 2
+			"flagValue": 4
 			},
 		"line_endings": {
 			"active": 0,
@@ -270,7 +259,7 @@
 			"flagValue": -1
 			},
 		"no_implicit_braces": {
-			"active": 1,
+			"active": 0,
 			"flagValue": -1
 			},
 		"no_implicit_parens": {
@@ -763,7 +752,7 @@
 	"markdownAutoOutputPathReplace2": "",
 	"markdownAutoOutputPathStyle": 0,
 	"markdownCriticStyle": 0,
-	"markdownEnableFootnotes": 0,
+	"markdownEnableFootnotes": 1,
 	"markdownEnableLabels": 1,
 	"markdownEnableSmartQuotes": 1,
 	"markdownEscapeLineBreaks": 0,
@@ -783,12 +772,12 @@
 	"sassAutoOutputPathStyle": 2,
 	"sassCreateSourceMap": 0,
 	"sassDebugStyle": 0,
-	"sassDecimalPrecision": 5,
+	"sassDecimalPrecision": 10,
 	"sassOutputStyle": 0,
 	"sassUseLibsass": 0,
 	"shouldRunAutoprefixer": 0,
 	"shouldRunBless": 0,
-	"skippedItemsString": ".svn, .git, .hg, log, _logs, _cache, cache, logs",
+	"skippedItemsString": ".svn, .git, .hg, log, _logs, _cache, cache, logs, node_modules",
 	"slimAutoOutputPathEnabled": 1,
 	"slimAutoOutputPathFilenamePattern": "*.html",
 	"slimAutoOutputPathRelativePath": "",
@@ -822,7 +811,7 @@
 	"typescriptJSXMode": 0,
 	"typescriptMinifyOutput": 0,
 	"typescriptModuleResolutionType": 0,
-	"typescriptModuleType": 0,
+	"typescriptModuleType": 2,
 	"typescriptNoImplicitAny": 0,
 	"typescriptPreserveConstEnums": 0,
 	"typescriptRemoveComments": 0,

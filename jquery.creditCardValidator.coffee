@@ -59,17 +59,12 @@ $.fn.validateCreditCard = (callback, options) ->
         {
             name: 'visa'
             range: '4'
-            valid_length: [ 13, 16 ]
+            valid_length: [ 13..19 ]
         }
         {
             name: 'mastercard'
             range: '51-55,2221-2720'
             valid_length: [ 16 ]
-        }
-        {
-            name: 'maestro'
-            range: '5018, 5020, 5038, 6304, 6759, 6761-6763'
-            valid_length: [ 12..19 ]
         }
         {
             name: 'discover'
@@ -80,6 +75,11 @@ $.fn.validateCreditCard = (callback, options) ->
             name: 'dankort'
             range: '5019'
             valid_length: [ 16 ]
+        }
+        {
+            name: 'maestro'
+            range: '50, 56-69'
+            valid_length: [ 12..19 ]
         }
     ]
 
