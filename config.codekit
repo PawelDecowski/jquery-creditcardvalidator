@@ -64,15 +64,17 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/jquery.creditCardValidator.js": {
-		"fileType": 64,
-		"ignore": 1,
+	"\/jquery.creditCardValidator.coffee": {
+		"createSourceMap": 0,
+		"fileType": 32,
+		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/jquery.creditCardValidator.js",
-		"outputAbbreviatedPath": "\/min\/jquery.creditCardValidator-min.js",
+		"inputAbbreviatedPath": "\/jquery.creditCardValidator.coffee",
+		"minifyOutput": 0,
+		"outputAbbreviatedPath": "\/jquery.creditCardValidator.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/jquery.creditCardValidator.js": {
@@ -167,6 +169,20 @@
 	],
 "lastSavedByUser": "Pawel Decowski",
 "manualImportLinks": {
+	"\/jquery.creditCardValidator.coffee": [
+		{
+			"followForSyntaxChecking": 1,
+			"linkedFileAbbreviatedPath": "\/trie.coffee",
+			"position": 0,
+			"type": 0
+			},
+		{
+			"followForSyntaxChecking": 1,
+			"linkedFileAbbreviatedPath": "\/range.coffee",
+			"position": 1,
+			"type": 0
+			}
+		]
 	},
 "projectAttributes": {
 	"bowerAbbreviatedPath": "",
