@@ -59,7 +59,7 @@ $.fn.validateCreditCard = (callback, options) ->
         {
             name: 'visa'
             pattern: /^4/
-            valid_length: [ 16 ]
+            valid_length: [ 13..19 ]
         }
         {
             name: 'mastercard'
