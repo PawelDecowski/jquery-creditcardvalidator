@@ -81,6 +81,11 @@ $.fn.validateCreditCard = (callback, options) ->
             range: '50, 56-69'
             valid_length: [ 12..19 ]
         }
+        {
+            name: 'uatp'
+            range: '1'
+            valid_length: [ 15 ]
+        }
     ]
 
     bind = false

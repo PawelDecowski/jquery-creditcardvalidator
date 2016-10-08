@@ -163,6 +163,10 @@
         name: 'maestro',
         range: '50, 56-69',
         valid_length: [12, 13, 14, 15, 16, 17, 18, 19]
+      }, {
+        name: 'uatp',
+        range: '1',
+        valid_length: [15]
       }
     ];
     bind = false;
