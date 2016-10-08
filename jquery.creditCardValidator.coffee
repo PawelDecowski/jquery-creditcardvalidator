@@ -1,5 +1,5 @@
 ###
-jQuery Credit Card Validator 1.0
+jQuery Credit Card Validator 1.1
 
 Copyright 2012-2015 Pawel Decowski
 
@@ -28,62 +28,57 @@ $.fn.validateCreditCard = (callback, options) ->
     card_types = [
         {
             name: 'amex'
-            pattern: /^3[47]/
             range: '34,37'
             valid_length: [ 15 ]
         }
         {
             name: 'diners_club_carte_blanche'
-            pattern: /^30[0-5]/
             range: '300-305'
             valid_length: [ 14 ]
         }
         {
             name: 'diners_club_international'
-            pattern: /^36/
             range: '36'
             valid_length: [ 14 ]
         }
         {
             name: 'jcb'
-            pattern: /^35(2[89]|[3-8][0-9])/
             range: '3528-3589'
             valid_length: [ 16 ]
         }
         {
             name: 'laser'
-            pattern: /^(6304|670[69]|6771)/
             range: '6304, 6706, 6709, 6771'
             valid_length: [ 16..19 ]
         }
         {
             name: 'visa_electron'
-            pattern: /^(4026|417500|4508|4844|491(3|7))/
             range: '4026, 417500, 4508, 4844, 4913, 4917'
             valid_length: [ 16 ]
         }
         {
             name: 'visa'
-            pattern: /^4/
             range: '4'
-            valid_length: [ 16 ]
+            valid_length: [ 13, 16 ]
         }
         {
             name: 'mastercard'
-            pattern: /^5[1-5]/
-            range: '51-55'
+            range: '51-55,2221-2720'
             valid_length: [ 16 ]
         }
         {
             name: 'maestro'
-            pattern: /^(5018|5020|5038|6304|6759|676[1-3])/
             range: '5018, 5020, 5038, 6304, 6759, 6761-6763'
             valid_length: [ 12..19 ]
         }
         {
             name: 'discover'
-            pattern: /^(6011|622(12[6-9]|1[3-9][0-9]|[2-8][0-9]{2}|9[0-1][0-9]|92[0-5]|64[4-9])|65)/
             range: '6011, 622126-622925, 644-649, 65'
+            valid_length: [ 16 ]
+        }
+        {
+            name: 'dankort'
+            range: '5019'
             valid_length: [ 16 ]
         }
     ]
@@ -102,22 +97,17 @@ $.fn.validateCreditCard = (callback, options) ->
     options ?= {}
 
     options.accept ?= (card.name for card in card_types)
-    options.regex ?= false
 
     for card_type in options.accept
         if card_type not in (card.name for card in card_types)
-            throw "Credit card type '#{ card_type }' is not supported"
+            throw Error "Credit card type '#{ card_type }' is not supported"
 
     get_card_type = (number) ->
         for card_type in (card for card in card_types when card.name in options.accept)
-            if options.regex
-                if number.match card_type.pattern
-                    return card_type
-            else
-                r = Range.rangeWithString(card_type.range)
+            r = Range.rangeWithString(card_type.range)
 
-                if r.match(number)
-                    return card_type
+            if r.match(number)
+                return card_type
 
         null
 
@@ -137,7 +127,7 @@ $.fn.validateCreditCard = (callback, options) ->
     is_valid_length = (number, card_type) ->
         number.length in card_type.valid_length
 
-    validate_number = (number) =>
+    validate_number = (number) ->
         card_type = get_card_type number
         luhn_valid = false
         length_valid = false
@@ -150,7 +140,6 @@ $.fn.validateCreditCard = (callback, options) ->
         valid: luhn_valid and length_valid
         luhn_valid: luhn_valid
         length_valid: length_valid
-        method: if options.regex then 'RegExp' else 'Trie'
 
     validate = =>
         number = normalize $(this).val()
