@@ -64,23 +64,21 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/jquery.creditCardValidator.coffee": {
-		"createSourceMap": 0,
-		"fileType": 32,
-		"ignore": 0,
+	"\/jquery.creditCardValidator.js": {
+		"fileType": 64,
+		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/jquery.creditCardValidator.coffee",
-		"minifyOutput": 0,
-		"outputAbbreviatedPath": "\/jquery.creditCardValidator.js",
+		"inputAbbreviatedPath": "\/jquery.creditCardValidator.js",
+		"outputAbbreviatedPath": "\/min\/jquery.creditCardValidator-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 0,
+		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
 	"\/range.coffee": {
 		"createSourceMap": 0,
 		"fileType": 32,
-		"ignore": 1,
+		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/range.coffee",
 		"minifyOutput": 1,
@@ -131,19 +129,19 @@
 		},
 	"\/tests\/lib\/qunit.js": {
 		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/tests\/lib\/qunit.js",
-		"outputAbbreviatedPath": "\/tests\/lib\/min\/qunit-min.js",
+		"outputAbbreviatedPath": "\/tests\/lib\/min\/qunit-ck.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
+		"syntaxCheckerStyle": 0
 		},
 	"\/trie.coffee": {
 		"createSourceMap": 0,
 		"fileType": 32,
-		"ignore": 1,
+		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/trie.coffee",
 		"minifyOutput": 1,
@@ -158,32 +156,18 @@
 	],
 "lastSavedByUser": "Pawel Decowski",
 "manualImportLinks": {
-	"\/jquery.creditCardValidator.coffee": [
-		{
-			"followForSyntaxChecking": 1,
-			"linkedFileAbbreviatedPath": "\/trie.coffee",
-			"position": 0,
-			"type": 0
-			},
-		{
-			"followForSyntaxChecking": 1,
-			"linkedFileAbbreviatedPath": "\/range.coffee",
-			"position": 1,
-			"type": 0
-			}
-		]
 	},
 "projectAttributes": {
 	"bowerAbbreviatedPath": "",
 	"displayValue": "cc",
-	"displayValueWasSetByUser": 1,
+	"displayValueWasSetByUser": 0,
 	"iconImageName": "compass_brown"
 	},
 "projectSettings": {
 	"alwaysUseExternalServer": 0,
 	"animateCSSInjections": 1,
 	"autoApplyPSLanguageSettingsStyle": 0,
-	"autoprefixerBrowserString": "> 1%, last 2 versions, Firefox ESR, Opera 12.1",
+	"autoprefixerBrowserString": "> 1%, last 2 versions, ff 17, opera 12.1",
 	"autoSyncProjectSettingsFile": 1,
 	"browserRefreshDelay": 0,
 	"coffeeAutoOutputPathEnabled": 1,
@@ -224,7 +208,7 @@
 			},
 		"indentation": {
 			"active": 1,
-			"flagValue": 4
+			"flagValue": 2
 			},
 		"line_endings": {
 			"active": 0,
@@ -259,7 +243,7 @@
 			"flagValue": -1
 			},
 		"no_implicit_braces": {
-			"active": 0,
+			"active": 1,
 			"flagValue": -1
 			},
 		"no_implicit_parens": {
