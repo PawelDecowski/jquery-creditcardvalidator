@@ -1,5 +1,14 @@
 # Change log
 
+## 1.1
+
+### New features
+
+* Changed number matching engine from regex to [trie-backed ranges](https://github.com/PawelDecowski/jquery-creditcardvalidator/wiki/Trie)
+* New card brands: Dankort, UATP
+* Updated NIN ranges: Maestro, MasterCard
+* Allow VISA lengths between 13 and 19 digits
+
 ## 1.0
 
 ### Breaking changes
