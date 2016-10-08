@@ -211,11 +211,6 @@ alert('CC type: ' + result.card_type.name
                         <code class="language-javascript">accept</code> (optional) — list of accepted credit cards, eg <code class="language-javascript">['visa', 'amex']</code>; if not specified, all supported cards are accepted
                         <pre><code class="language-javascript">var result = $('#cc_number').validateCreditCard({ accept: ['visa', 'mastercard'] })</code></pre>
                     </li>
-                    <li>
-                        <code class="language-javascript">regex</code> (optional) — set to <code class="language-javascript">true</code> to match using deprecated RegEx engine instead of the default trie engine; this has no effect on the result. RegEx matching is available for backwards compatibility in case you encounter problems.
-
-                        <aside><p>RegEx matching will be removed in a future release so try to use trie engine unless you’re having problems with it. In which case <a href="https://github.com/PawelDecowski/jquery-creditcardvalidator/issues/new">report it</a>.</p></aside>
-                    </li>
                 </ul>
             </div>
 
