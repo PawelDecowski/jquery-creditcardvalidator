@@ -154,8 +154,7 @@
                         <code class="language-javascript">card_type</code> &mdash; an object with the below properties, or <code class="language-javascript">null</code> if card type unknown
                         <ul class="list">
                             <li><code class="language-javascript">name</code> &mdash; one of the <a href="#supported-cards">strings describing the card type</a>, eg <code class="language-javascript">visa</code></li>
-                            <li><code class="language-javascript">pattern</code> <small>(only if using regex matching)</small> &mdash; regular expression used to match the card type, eg <code class="language-javascript">/^4/</code></li>
-                            <li><code class="language-javascript">range</code> <small>(only if using trie matching)</small> &mdash; range string used to match the card type, eg <code class="language-javascript">'6011, 622126-622925, 644-649, 65'</code></li>
+                            <li><code class="language-javascript">range</code> &mdash; range string used to match the card type, eg <code class="language-javascript">'6011, 622126-622925, 644-649, 65'</code></li>
                             <li><code class="language-javascript">length</code> &mdash; a list of valid lengths for the card type, eg <code class="language-javascript">[13, 16]</code></li>
                         </ul>
                     </li>
