@@ -132,6 +132,10 @@
         range: '36',
         valid_length: [14]
       }, {
+        name: 'china_unionpay',
+        pattern: /^(62|88)/,
+        valid_length: [16, 17, 18, 19]
+      }, {
         name: 'jcb',
         range: '3528-3589',
         valid_length: [16]
