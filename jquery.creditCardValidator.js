@@ -182,6 +182,14 @@
     if (options == null) {
       options = {};
     }
+    if (options.card_types != null && typeof options.card_types === 'object') {
+      for(i=0;i<options.card_types.length;i++){
+        if(options.card_types[i].name && options.card_types[i].range && options.card_types[i].valid_length){
+          card_types.unshift(options.card_types[i]);
+        }
+      }
+    }
+
     if (options.accept == null) {
       options.accept = (function() {
         var j, len, results;
