@@ -100,6 +100,13 @@ $.fn.validateCreditCard = (callback, options) ->
             bind = true
 
     options ?= {}
+    
+    if options.card_types and typeof options.card_types == 'object'
+      new_card_types = options.card_types
+      for cards of new_card_types
+        if new_card_types[cards].name and new_card_types[cards].range and new_card_types[cards].valid_length
+          card_types.unshift new_card_types[cards]
+
 
     options.accept ?= (card.name for card in card_types)
 
