@@ -1,0 +1,19 @@
+{
+    "coffeescript": {
+        "bare": false
+    },
+
+    "include": {
+        "hardFail": false,
+        "includePaths": ["src"]
+    },
+
+    "creditCardValidator": {
+        "header": [
+            "/**",
+            "<%= license %>",
+            "**/",
+            "\n\n"
+        ]
+    }
+}
