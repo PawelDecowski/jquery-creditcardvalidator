@@ -34,11 +34,11 @@ $.fn.validateCreditCard = (callback, options) ->
         {
             name: 'diners_club_carte_blanche'
             range: '300-305'
-            valid_length: [ 14 ]
+            valid_length: [ 14..19 ]
         }
         {
             name: 'diners_club_international'
-            range: '36, 38, 39'
+            range: '3095, 36, 38, 39'
             valid_length: [ 14..19 ]
         }
         {
@@ -68,8 +68,8 @@ $.fn.validateCreditCard = (callback, options) ->
         }
         {
             name: 'discover'
-            range: '6011, 622126-622925, 644-649, 65'
-            valid_length: [ 16 ]
+            range: '6011, 622126-622925, 624-626, 6282-6288, 644-649, 65'
+            valid_length: [ 16..19 ]
         }
         {
             name: 'dankort'

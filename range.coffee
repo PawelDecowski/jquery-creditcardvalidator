@@ -7,7 +7,7 @@ class Range
         if typeof ranges != 'string'
             throw Error 'rangeWithString requires a string parameter'
 
-        ranges = ranges.replace(/ /g, '')
+        ranges = ranges.replace(/[ ]/g, '')
         ranges = ranges.split ','
 
         trie = new Trie
