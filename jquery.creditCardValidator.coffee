@@ -68,8 +68,13 @@ $.fn.validateCreditCard = (callback, options) ->
         }
         {
             name: 'discover'
-            range: '6011, 622126-622925, 644-649, 65'
+            range: '6011, 65'
             valid_length: [ 16 ]
+        }
+        {
+            name: 'union_pay'
+            range: '622126-622925, 644-649, 6282-6288'
+            valid_length: [ 16..19 ]
         }
         {
             name: 'dankort'
