@@ -167,6 +167,10 @@
         name: 'uatp',
         range: '1',
         valid_length: [15]
+      }, {
+        name: 'unionpay',
+        range: '62',
+        valid_length: [16]
       }
     ];
     bind = false;
