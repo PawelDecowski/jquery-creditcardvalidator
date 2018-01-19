@@ -167,6 +167,10 @@
         name: 'uatp',
         range: '1',
         valid_length: [15]
+      }, {
+        name: 'mir',
+        range: '22-27',
+        valid_length: [16]
       }
     ];
     bind = false;
