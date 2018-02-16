@@ -169,7 +169,7 @@
         valid_length: [15]
       }, {
         name: 'mir',
-        range: '22-27',
+        range: '2200-2204',
         valid_length: [16]
       }
     ];
