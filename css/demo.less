@@ -254,7 +254,6 @@ header {
     .box-shadow(0 1px 2px -1px rgba(0,0,0,.2));
 
     background: #f6f6f0;
-    margin-bottom: @line-height * 4;
 
     .wrapper {
         overflow: hidden;
@@ -644,6 +643,65 @@ footer {
         img {
             margin-bottom: 2px;
             vertical-align: middle;
+        }
+    }
+}
+
+#newsletter {
+    background-color: #22222a;
+    margin-bottom: @line-height * 4;
+    padding: @line-height * 4 20px;
+
+    h2 {
+        color: #fff;
+        font-size: 48px;
+        font-weight: 200;
+        line-height: @line-height * 2;
+        margin-bottom: @line-height * 2;
+        text-align: center;
+    }
+
+    form {
+        background-color: transparent;
+        border: none;
+        box-shadow: none;
+        display: flex;
+        position: static;
+    }
+
+    input {
+        border: none;
+        border-radius: 4px;
+        height: @line-height * 1.5;
+        line-height: @line-height * 1.5;
+        padding: 0 10px;
+
+        &:focus {
+            box-shadow: 0 0 0 3px #529ae2;
+            outline: none;
+        }
+    }
+
+    label {
+        color: #99999f;
+    }
+
+    button {
+        background: #f44;
+        border: none;
+        border-radius: 4px;
+        color: rgba(255,2555,255, .8);
+        cursor: pointer;
+        font-family: @sans;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 42px;
+        padding: 0 30px;
+        text-shadow: 0 0 2px rgba(0,0,0,.33);
+        width: 100%;
+
+        &:hover {
+            background-color: #f55;
         }
     }
 }
