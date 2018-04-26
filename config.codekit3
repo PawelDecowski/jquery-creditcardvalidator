@@ -7,7 +7,7 @@
 		"uuidString": "73844398-9B29-4D24-B5AE-B21DEEB7E809"
 		}
 	],
-"creatorBuild": "26268",
+"creatorBuild": "26330",
 "files": {
 	"\/.gitignore": {
 		"cB": 0,
@@ -357,6 +357,16 @@
 		"mi": 1,
 		"oA": 1,
 		"oAP": "\/js\/min\/jquery.creditCardValidator-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/js\/native.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/js\/min\/native-min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0

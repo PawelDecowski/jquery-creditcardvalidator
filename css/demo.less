@@ -300,7 +300,7 @@ header {
 
 .demo {
     height: @line-height * 17;
-    margin: 0 auto;
+    margin: 0 auto 56px;
     position: relative;
     width: 327px;
 
@@ -338,48 +338,83 @@ header {
     padding: 0 20px;
 }
 
-#carbonads {
-    border: 1px solid #e5e5e5;
-    border-left-style: none;
-    border-right-style: none;
+.native-ad {
     clear: both;
-    font-size: 13px;
-    line-height: 20px;
     margin: 0 auto;
-    overflow: hidden;
-    padding: @line-height / 2 - 1px 0;
-    position: relative;
-    width: 300px;
-
-    a {
-        color: #777;
-
-        &:hover {
-            border-bottom: none;
-        }
-    }
+    visibility: hidden;
+    transition: all .25s ease-in-out;
+    max-width: 800px;
+    opacity: 0;
 }
 
-.carbon-img {
-    float: left;
+.native-show {
+    visibility: visible;
+    opacity: 1;
+}
+
+.native-img {
     margin-right: 20px;
+    max-height: 50px;
+    border-radius: 3px;
+}
 
-    img {
-        display: block
+.native-flex {
+    display: flex;
+    padding: 20px 20px;
+    text-decoration: none;
+
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+
+    &:hover {
+        border-bottom: none;
     }
 }
 
-.carbon-text {
-    float: right;
-    width: 150px;
+.native-main {
+    display: flex;
+
+    flex-flow: row nowrap;
+    align-items: center;
 }
 
-.carbon-poweredby {
-    color: #ccc !important;
-    font-size: 11px;
-    position: absolute;
-    right: 0;
-    bottom: 0;
+.native-details {
+    display: flex;
+    margin-right: 10px;
+
+    flex-flow: column nowrap;
+}
+
+.native-company {
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 10px;
+}
+
+.native-desc {
+    letter-spacing: 1px;
+    font-weight: 300;
+    line-height: 1.4;
+}
+
+.native-cta {
+    padding: 10px 14px;
+    border-radius: 3px;
+    box-shadow: 0 6px 13px 0 hsla(0, 0%, 0%, .15);
+    text-transform: uppercase;
+    white-space: nowrap;
+    letter-spacing: 1px;
+    font-weight: 400;
+    font-size: 12px;
+    transition: all .3s ease-in-out;
+    transform: translateY(-1px);
+}
+
+.native-cta:hover {
+    box-shadow: none;
+    transform: translateY(1px);
 }
 
 #features {
