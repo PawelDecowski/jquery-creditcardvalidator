@@ -756,3 +756,66 @@ footer {
 @media screen and (min-width: 1200px) {
     @import "extra_large";
 }
+
+.estipad-ad {
+    background-color: #00bcff;
+    background-image: linear-gradient(-15deg, #00bcff, #7100ff);
+    clear: both;
+    color: rgba(255,255,255, .85);
+    font-size: 18px;
+    letter-spacing: .5px;
+
+    margin: 0 auto;
+    max-width: 740px;
+    padding: 20px 30px;
+
+    a {
+        color: inherit;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &:hover {
+            border-bottom: none;
+        }
+    }
+}
+
+.estipad-ad-details {
+    margin: 0 40px;
+}
+
+.estipad-ad-details__header {
+    display: block;
+    font-weight: 400;
+}
+
+.estipad-ad-details__description {
+    display: block;
+    line-height: 24px;
+}
+
+.estipad-ad__cta {
+    background-color: lighten(#b91372, 10%);
+    border-radius: 3px;
+    box-shadow: 0 2px 10px rgba(0,0,0,.2);
+    color: white;
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    padding: 7px 20px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    transition: all .2s;
+}
+
+.estipad-ad:hover {
+    cursor: pointer;
+
+    .estipad-ad__cta {
+        box-shadow: none;
+        background-color: lighten(#b91372, 5%);
+        transform: translateY(3px);
+    }
+}
+

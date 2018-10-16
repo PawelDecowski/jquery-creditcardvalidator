@@ -7,7 +7,7 @@
 		"uuidString": "73844398-9B29-4D24-B5AE-B21DEEB7E809"
 		}
 	],
-"creatorBuild": "26330",
+"creatorBuild": "26680",
 "files": {
 	"\/.gitignore": {
 		"cB": 0,
@@ -410,7 +410,8 @@
 	"creationDate": 541076863,
 	"displayValue": "cc",
 	"displayValueWasSetByUser": 0,
-	"iconImageName": "meme-soon"
+	"iconImageName": "meme-soon",
+	"iconImageWasSetByUser": 0
 	},
 "projectSettings": {
 	"abortBuildOnError": 1,
@@ -2213,6 +2214,7 @@
 		"autoOutputPathReplace1": "",
 		"autoOutputPathReplace2": "",
 		"autoOutputPathStyle": 0,
+		"outputFormat": 0,
 		"quality": 100
 		},
 	"languageDefaultsJS": {
