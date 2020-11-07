@@ -174,10 +174,9 @@ IN THE SOFTWARE.
     validate_number = function(number) {
       var length_valid, luhn_valid;
       card_type = get_card_type(number);
-      luhn_valid = false;
+      luhn_valid = is_valid_luhn(number);
       length_valid = false;
       if (card_type != null) {
-        luhn_valid = is_valid_luhn(number);
         length_valid = is_valid_length(number, card_type);
       }
       return {
