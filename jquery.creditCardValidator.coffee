@@ -34,12 +34,12 @@ $.fn.validateCreditCard = (callback, options) ->
         {
             name: 'diners_club_carte_blanche'
             range: '300-305'
-            valid_length: [ 14 ]
+            valid_length: [ 16..19 ]
         }
         {
             name: 'diners_club_international'
-            range: '36'
-            valid_length: [ 14 ]
+            range: '3095, 36, 38-39'
+            valid_length: [ 14..19 ]
         }
         {
             name: 'jcb'
