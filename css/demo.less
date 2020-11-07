@@ -42,7 +42,7 @@ body {
     color: #464640;
     font-family: @sans;
     font-size: 19px;
-    font-weight: 100;
+    font-weight: 200;
     line-height: @line-height;
     padding-top: @line-height * 2;
 }
@@ -140,8 +140,8 @@ aside {
     border-left: 4px solid darken(#f2f8fa, 5%);
     font-size: 16px;
     font-style: italic;
-    margin: @line-height / 2 0 @line-height;
-    padding: @line-height / 2 - 1px @line-height - 1px @line-height / 2 - 1px @line-height - 4px;
+    margin: (@line-height / 2) 0 @line-height;
+    padding: (@line-height / 2) - 1px @line-height - 1px (@line-height / 2) - 1px @line-height - 4px;
 
     p {
         color: #789;
@@ -163,9 +163,9 @@ pre[class*="language-"] {
     background-color: #f6f6f0;
     border: 1px solid #e6e6e0;
     line-height: 20px;
-    margin: @line-height / 2 0 @line-height;
+    margin: (@line-height / 2) 0 @line-height;
     overflow: scroll;
-    padding: @line-height / 2 - 2px 20px;
+    padding: (@line-height / 2) - 2px 20px;
 
     code {
         display: block;
@@ -222,7 +222,7 @@ header {
 
         a, h1 {
             display: block;
-            padding: @line-height / 2 19px @line-height / 2 20px;
+            padding: (@line-height / 2) 19px (@line-height / 2) 20px;
 
             &:hover {
                 border-bottom: none;
@@ -318,7 +318,7 @@ header {
     border: 1px solid #bbc;
     left: 80px;
     margin-bottom: @line-height;
-    padding: @line-height / 2 20px;
+    padding: (@line-height / 2) 20px;
     position: absolute;
     top: 156px;
     z-index: 10;
@@ -424,7 +424,7 @@ header {
 
     h3 {
         line-height: @line-height;
-        padding: @line-height / 2 0;
+        padding: (@line-height / 2) 0;
     }
 }
 
@@ -488,8 +488,8 @@ form {
             display: block;
             font-size: 11px;
             font-weight: 400;
-            line-height: @line-height / 2;
-            padding-top: @line-height / 2;
+            line-height: (@line-height / 2);
+            padding-top: (@line-height / 2);
 
             a {
                 color: lighten(desaturate(@link-color, 25%), 10%);
@@ -628,6 +628,7 @@ ins {
 
 footer {
     background: #232323;
+    font-weight: 300;
     padding: @line-height * 2 10px;
 
     .column {
