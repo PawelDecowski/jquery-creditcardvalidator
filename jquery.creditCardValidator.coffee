@@ -43,7 +43,7 @@ $.fn.validateCreditCard = (callback, options) ->
         }
         {
             name: 'jcb'
-            range: '3528-3589'
+            range: '3088-3094, 3096-3102, 3112-3120, 3158-3159, 3337-3349, 3528-3589'
             valid_length: [ 16 ]
         }
         {
@@ -69,7 +69,7 @@ $.fn.validateCreditCard = (callback, options) ->
         {
             name: 'discover'
             range: '6011, 622126-622925, 644-649, 65'
-            valid_length: [ 16 ]
+            valid_length: [ 16..19 ]
         }
         {
             name: 'dankort'
