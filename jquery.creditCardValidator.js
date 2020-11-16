@@ -39,14 +39,14 @@ IN THE SOFTWARE.
       }, {
         name: 'diners_club_carte_blanche',
         range: '300-305',
-        valid_length: [14]
+        valid_length: [16, 17, 18, 19]
       }, {
         name: 'diners_club_international',
-        range: '36',
-        valid_length: [14]
+        range: '3095, 36, 38-39',
+        valid_length: [14, 15, 16, 17, 18, 19]
       }, {
         name: 'jcb',
-        range: '3528-3589',
+        range: '3088-3094, 3096-3102, 3112-3120, 3158-3159, 3337-3349, 3528-3589',
         valid_length: [16]
       }, {
         name: 'laser',
@@ -67,7 +67,7 @@ IN THE SOFTWARE.
       }, {
         name: 'discover',
         range: '6011, 622126-622925, 644-649, 65',
-        valid_length: [16]
+        valid_length: [16, 17, 18, 19]
       }, {
         name: 'dankort',
         range: '5019',
