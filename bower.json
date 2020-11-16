@@ -3,7 +3,7 @@
     "description": "Detect and validate credit card numbers.",
     "homepage": "https://jquerycreditcardvalidator.com",
     "authors": [
-        "Pawel Decowski (http://about.me/PawelDecowski)"
+        "Pawel Decowski (https://about.me/PawelDecowski)"
     ],
     "version": "1.2.0",
     "main": "jquery.creditCardValidator.js",
