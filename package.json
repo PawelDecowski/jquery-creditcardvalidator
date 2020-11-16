@@ -1,8 +1,13 @@
 {
   "name": "jquery-creditcardvalidator",
   "version": "1.2.0",
+  "description": "Detect and validate credit card numbers.",
+  "keywords": ["credit", "debit", "visa", "mastercard", "discover", "amex", "american express", "card", "validation", "cc", "credit card", "payment"],
+  "homepage": "https://jquerycreditcardvalidator.com",
   "repository": "https://github.com/PawelDecowski/jquery-creditcardvalidator/",
   "license": "MIT",
+  "author": "Pawel Decowski (https://about.me/PawelDecowski)",
+  "bugs": "https://github.com/PawelDecowski/jquery-creditcardvalidator/issues/",
   "devDependencies": {
     "gulp": "^4.0.2",
     "gulp-coffee": "^2.3.5",
@@ -10,5 +15,8 @@
     "gulp-rename": "^1.4.0",
     "gulp-util": "^3.0.8",
     "gulp-watch": "^4.3.11"
+  },
+  "dependencies": {
+    "jquery": ">=1.7"
   }
 }
