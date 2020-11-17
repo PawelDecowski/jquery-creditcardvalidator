@@ -20,4 +20,28 @@ Do not use any branches other than [master](https://github.com/PawelDecowski/jqu
 
 ## How to use
 
-For instructions see the official [jQuery Credit Card Validator homepage](http://jquerycreditcardvalidator.com/).
+Run validation every time a field value changes:
+
+```js
+$('#cc_number').validateCreditCard(function(result) {
+    if (result.valid) {
+        $(this).addClass('cc-valid');
+    } else {
+        $(this).removeClass('cc-valid');
+    }
+});
+```
+
+Run validation once:
+
+```js
+const result = $('#cc_number').validateCreditCard();
+
+if (result.valid) {
+    $(this).addClass('cc-valid');
+} else {
+    $(this).removeClass('cc-valid');
+}
+```
+
+For full instructions see the official [jQuery Credit Card Validator homepage](http://jquerycreditcardvalidator.com/).
