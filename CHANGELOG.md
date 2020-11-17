@@ -4,15 +4,17 @@
 
 ### New features
 
-
 * Added support for MIR cards
 * Updated IIN ranges: Diners Club International, JCB
 * Updated valid lengths: Diners Club Carte Blanche, Diners Club International, JCB, Discover
 * Validate Luhn even if the card number doesn’t match any known cards.
   `luhn_valid` is now `true` if the Luhn checksum is correct, even if the card number is not recognised.
+
+### Other
+
 * Switched build system from CodeKit to Gulp
 * Published to NPM
-
+* Added basic instructions to `README.md`
 
 ## 1.1
 
