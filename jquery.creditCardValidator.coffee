@@ -53,7 +53,7 @@ $.fn.validateCreditCard = (callback, options) ->
         }
         {
             name: 'visa_electron'
-            range: '4026, 417500, 4508, 4844, 4913, 4917'
+            range: '4026, 417500, 4508, 4844, 4913, 4917,4920'
             valid_length: [ 16 ]
         }
         {
