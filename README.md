@@ -30,6 +30,8 @@ $('#cc_number').validateCreditCard(function(result) {
         $(this).removeClass('cc-valid');
     }
 });
+
+This is a dummy line
 ```
 
 Run validation once:
