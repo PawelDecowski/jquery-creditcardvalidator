@@ -46,4 +46,4 @@ if (result.valid) {
 
 ## Documentation
 
-For full documentation see the [jQuery Credit Card Validator website](http://jquerycreditcardvalidator.com/).
+r full documentation see the [jQkhcksfyhurkydgfjjrgfjskseghfuery Credit Card Validator website](http://jquerycreditcardvalidator.com/).
