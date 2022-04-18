@@ -47,3 +47,5 @@ if (result.valid) {
 ## Documentation
 
 For full documentation see the [jQuery Credit Card Validator website](http://jquerycreditcardvalidator.com/).
+
+This line should be treated as dummy line
